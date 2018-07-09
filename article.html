@@ -1,0 +1,167 @@
+<!doctype html>
+<meta charset="utf-8">
+<script src="https://distill.pub/template.v1.js"></script>
+
+<script type="text/front-matter">
+  title: "Article Title"
+  description: "Description of the post"
+  authors:
+  - Philipp Wacker:
+  affiliations:
+  - Friedrich-Alexander-Universit�t Erlangen-N�rnberg
+</script>
+
+<dt-article>
+  <h1>Reducing research debt </h1>
+  <h2>A description of the article</h2>
+  <dt-byline></dt-byline>
+  <p>First paragraph</p>
+  <p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications.</p>
+
+  <h2>Research debt and crippling specialization</h2>
+  <p>The last true polymath is said to have been Gottfried Wilhelm Leibniz, with countless contributions to logic, philosophy, mathematics, engineering, psychology, physics, law and various other fields. 
+    Few of us can say to have a similarly broad expertise; even more: Most researchers would label themselves not as mathematicians but as topologists, probabilists or computational scientists; not as physicists, 
+  but as experimental physicists or  string theorists etc. It is believed that this is not due to humanity becoming less intelligent but due to science becoming more and more specialised: If Leibniz's endeavours are likened
+  to climbing all mountains in the Austrian Alps (which is no mean feat but possible given enough perseverance), a modern scientist aspiring to be a true polymath faces a challenge similar to that of scaling every elevation higher than 500m on Earth as well as on any known celestial object in the solar system.</p>
+  <p> This also affects students aspiring to become researchers themselves: The long way to the "battlefront" of current research becomes longer with every new proven result. Thought through, this means that -- given nothing changes -- there is a natural limit to research happening at a point where coming to speed with current research takes a whole lifetime. 
+ </p>
+ <p> 
+  There are two ways out of this dilemma. First, we can narrow down specializations even more (creating researchers that don't study "stochastic partial differential equations (SPDEs)" but "SPDEs on separable Hilbert spaces allowing for a Lyapunov function with a strictly non-positive generator" (or whatever super-specialized research might arise in this future scenario)) such that there is less relevant material to be learned until novel research can be carried out. But this can only buy so much time and we suspect that there is an upper limit to specialization that will still attract people to mathematical research. </p>
+  <p>
+  The second idea is to speed up the learning process (in the "climbing mountains" metaphor of Christopher Olah this means constructing elevators to skip the climb). In this essay we want to collect and present a few ideas on how to achieve this goal with the aid of new media. A lot of these ideas have been present for some time but with the development of newer and more flexible web technologies some concepts are now more easily implemented than ten years ago. We will talk about the following topics.</p>
+  <ul>
+  <li>Leslie Lamport's hierarchical proof structure</li>
+  <li>Nonlinear narratives</li>
+  <li>Polya's four steps as a general guideline for mathematical teaching</li>
+  <li>Visualization and animation</li>
+  </ul>
+  <p>We will then talk about some hurdles to the implementation of these measures and conclude with an incomplete list of "best practices".</p>
+  
+  
+
+ 
+  <p>[Christopher Olah's text: Research debt, building elevators, both in research and teaching. Change analogy to mines instead of mountains (manmade structures, top-down structure of books)]</p>
+
+  <h2>Scope of the article
+  </h2>
+  <p>In this article, we try to collect ideas for how to better communicate mathematical concepts, both in research and in teaching</p>
+
+
+  <h2>Lamport's expandable/collapsable proof structure</h2>
+  <p></p>
+  
+
+  <h2>Nonlinear narratives</h2>
+  <p>Textbooks and scientific articles are usually written in a linear manner: Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader. The reader can stray from the path,
+    jump over sections and ignore proofs which he deems to tedious to follow for the moment. Many (including the author) do this with an uneasy feeling of risking "missing out" on an important idea hidden in the ignored sections.
+  </p>
+  <p>Humans have a deep-rooted passion for playing and exploring, with Friedrich Schiller going as far as to say "Man only plays when in the full meaning of the word he is a man, and he is only completely a man when he plays.". 
+    Many mathematical discoveries (as happened with breakthroughs in physics and engineering) only arose from someone thinking "what happens if I change this bit?". People love to tinker and to fiddle; and to observe the environment's reaction.
+    Furthermore, fun leads to passion, passion gives persistence and motivation, which in turn is necessary for the hard work needed in order to achieve anything meaningful. It makes sense to 
+    try and introduce "explorative fun" any time when teaching mathematics (be it lecturing undergrads or writing a research paper).
+  </p>
+  <p>There is a caveat to this: Given too much explorative freedom, anyone will be overwhelmed by the amount of choices (you can't just give a high school student a licence of Matlab and tell him to "do numerics" with it).
+    There is a sweet spot (which may be individually different) between the yoke of a very rigid textbook and unhelpful total freedom. We think that an instructive teaching medium has struck the balance if it 
+    takes the reader by the hand, gently leads him towards helpful ideas, warns him of common misunderstandings but then takes a step back and waits for the reader to choose the directions in which he wants to proceed: 
+    More rigor, more exercise, more details or more intuition (note that those categories are by no means mutually exclusive in the long term, but for someone starting to learn about a specific field they may be at first).
+  </p>
+  <p>A second point to this is that no textbook and no article is read by a homogenous body of people but rather by experts and students, by someone just needing a specific definition or proof, or by someone who 
+    is trying to autodidactically learn about a certain subject. No two reader will have identical prerequisites or goals and thus will need different levels of detail and explanation. We have seen this fact when we talked 
+  about expandable proof structure but the gist of it applies to the structure of a whole document as well. </p>
+  <p>Textbooks typically deal with that conundrum (if they do at all) by "starring" advanced topics or giving a roadmap of which sections to read for different kinds of readers [examples]. This addresses the problem,
+    but only partially solves it: In order to not exclude the "weakest relevant reader", the medium has to incorporate a vast amount of text which has to be skipped in whole by the "stronges relevant reader", leaving him with
+  the feeling that the resource he is consulting mostly consists of irrelevant material with only a few gems which are hard to find (even with navigational help by the author). More often than not, this will discourage him from reading
+further.</p>
+<p>A good textbook (or article) thus should be able to hide and show content depending on the expertise of the reader. Obviously this cannot happen automatically but we believe that the act of "minimizing" "irrelevant content"
+  will help the reader to manage the content better. 
+</p>
+<p>Another counterdraft to a contiguous textbook might be to use a non-linear document structure. A conventional text is actually just a long scroll of paper, but a graph (or tree) structure might to the trick: 
+  A text would necessarily need a stem covering the main story with branches diverting to "building intuition", "generalization to metric spaces", "more examples and counterexamples", "applications to physics" etc. 
+  Most readers will find some of those branches, but not all of them, interesting. By presenting the material in this form, the reader does not need to skip a large number of pages, losing track of what he read and what he leapt over.
+</p>
+
+  <h2>Polya's four steps</h2>
+  <p>As presented in <dt-cite key="cairns2003dynamically"></dt-cite>, Polya's four steps to solving a problem are as follows.
+    <ol>
+      <li><b>Understand</b> the problem with examples, diagrams and a careful examination of each of the terms and unknowns in the problem.</li>
+      <li><b>Plan</b> how you intend to solve the problem.</li>
+      <li><b>Execute</b> the planned solution with care.</li>
+      <li><b>Reflect</b> on the result, how it relates to other results and how it might be proved differently.</li>
+    </ol>
+  </p>
+  
+  <h2>Animation and visualization</h2>
+   <p>Mathematical intuition seems to be a contradiction in terms: Intuition is a quick and dirty answering tool shaped by our everday experience: When we show someone a video of a person throwing a ball and we stop the video a few seconds into the ball's trajectory, we will get a roughly correct answer for "Where will it land?". We have an intuition for where a ball thrown by hand will land approximately even without making the calculations. On the other hand, we don't have an intuition for the dynamics of a ball thrown with 90% speed of light because it lies outside of what we see every day [according to whatif, it is not good]. By definition, abstract mathematics lies outside of our immediate everyday experience. Nevertheless, when mathematicians work, one can often hear things like "Intuitively I think you're right, but how do we prove that? Maybe we should try ..., this feels like a good idea.". The choice of words here betray that the mathematician actually has some kind of intuition on this topic, not shaped by everyday experience but by hours and hours of study. </p>
+   
+   <p> In our experience, intuition comes with specific mental imagery: The simplex algorithm for linear optimization problems can be posed in the language of linear inequalities as a sequence of Gaussian elimination steps. It is a lot more revealing, though, to think of the Simplex algorithm as jumping from vertex to vertex, while always improving on the value of the objective functional. Similarly, there is often a "particularly good" way of thinking about a mathematical concept. In many cases, this "good way" is both most easily expressed and stored in memory when presented visually. In some cases this visual representation may or may not be present in the mathematical community but it is not effectively taught in courses and not explained in most textbooks. One example for this is the "bar plot" imagery for entropy (from information theory). Apart from [Chris Olah's blog post and MacKay's book, weiter recherchieren ob das wirklich selten ist] we personally know no resources that explain entropy in this manner. [Further examples: 1-forms as surfaces that are pierced. Good example: MTW, bad example: most texts about differential forms] [The geometry of behaviour: Book only with visualizations] [internet and web technology allows creation and sharing of awesome 3d animations: Use that!]</p>
+  <h2>Further topics: Gamification, Bret Victor, use of oral explanation (videos) ... </h2>
+  <p></p>
+  
+  <h2>Hurdles and challenges</h2>
+  <p>
+    <ul>
+      <li>High workload</li>
+      <li>Can't be outsourced outside of research community</li>
+      <li>Paper is mostly too inflexible: Hard to publish and make permanent (internet technology gets outdated)!</li>
+    </ul>
+  </p>
+  
+  <h2>Best practices</h2>
+  <p>
+    <ul>
+      <li>Books: MacKay, Dynamics (Geometry of Behavior), A slower speed of light</li>
+    </ul>
+  </p>
+  
+</dt-article>
+
+<dt-appendix>
+</dt-appendix>
+
+<script type="text/bibliography">
+  @article{gregor2015draw,
+    title={DRAW: A recurrent neural network for image generation},
+    author={Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan},
+    journal={arXivreprint arXiv:1502.04623},
+    year={2015},
+    url={https://arxiv.org/pdf/1502.04623.pdf}
+  }
+
+  @article{lamport2012write,
+    title={How to write a 21 st century proof},
+    author={Lamport, Leslie},
+    journal={Journal of fixed point theory and applications},
+    volume={11},
+    number={1},
+    pages={43--63},
+    year={2012},
+    publisher={Springer}
+  }
+
+  @book{grundy1996browsable,
+    title={A browsable format for proof presentation},
+    author={Grundy, Jim and others},
+    year={1996},
+    publisher={Turku Centre for Computer Science}
+  }
+
+  @inproceedings{cairns2003theoretical,
+    title={A theoretical analysis of hierarchical proofs},
+    author={Cairns, Paul and Gow, Jeremy},
+    booktitle={International Conference on Mathematical Knowledge Management},
+    pages={175--187},
+    year={2003},
+    organization={Springer}
+  }
+
+  @article{cairns2003dynamically,
+    title={On dynamically presenting a topology course},
+    author={Cairns, Paul and Gow, Jeremy and Collins, Peter},
+    journal={Annals of Mathematics and Artificial Intelligence},
+    volume={38},
+    number={1-3},
+    pages={91--104},
+    year={2003},
+    publisher={Springer}
+  }
+</script>
