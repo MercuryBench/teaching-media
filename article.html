@@ -8,15 +8,15 @@
   authors:
   - Philipp Wacker:
   affiliations:
-  - Friedrich-Alexander-Universit�t Erlangen-N�rnberg
+  - Friedrich-Alexander-Universität Erlangen-Nürnberg
 </script>
-
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
 <dt-article>
   <h1>Reducing research debt </h1>
   <h2>A description of the article</h2>
   <dt-byline></dt-byline>
-  <p>First paragraph</p>
-  <p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications.</p>
 
   <h2>Research debt and crippling specialization</h2>
   <p>The last true polymath is said to have been Gottfried Wilhelm Leibniz, with countless contributions to logic, philosophy, mathematics, engineering, psychology, physics, law and various other fields. 
@@ -48,9 +48,55 @@
 
 
   <h2>Lamport's expandable/collapsable proof structure</h2>
-  <p></p>
-  
+  <p>In his 2012 paper <dt-cite key="lamport2012write"></dt-cite>, Leslie Lamport advocated the introduction of <i>structured proofs</i> in mathematical literature. His basic message was that, while notation 
+  has improved a lot (we now write $x^2 = 4$ instead of "what is the number which has the property of equating 4 when multiplied by itself?"), the mathematical community's way of writing down proofs was basically trapped in the 17th century.</p>
+  <p>He proposed to use a <i>hierarchical</i> proof structure: </p>
+  <figure class="l-screen-inset">
+    <div style="float:left;">
+      <img src="proof.png" width="571"/>
+      <figcaption>The original proof from Spivak[Cite!]</figcaption>
+    </div> 
+    <div style="float:left;"> 
+      <img src="proof_fixed.png" width="567" >
+      <figcaption>Lamport's proposed proof structure</figcaption>
+    </div>
+  </figure>
 
+  <p>Now every step of the proof is clearly contains all the "ins and outs". Now some reader may struggle with step 2: The application of the Mean Value Theorem
+    requires a function to be continous but he only sees a differentiable function. This means we need a sub-proof for the fact every differentiable function is continous. At this point we can either refer to a lemma 
+    which might have proven this fact before or we can follow Lamport's suggestion to insert a sub-proof.
+  </p>
+  <figure class="l-body">
+        <img src="proof_substep.png" width="514"/>
+        <figcaption>Subproof of step 2, from Lamport<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
+  </figure>
+  <p>These levels of detail can be included in a hierarchical proof in at least three ways. 
+    <ul>
+      <li>Hierarchical structure by indentation: All substeps are shown always and structured by various degrees of indentation. This is the only viable method for print but has the draw-back of never hiding 
+        unnecessary information for advanced readers (although it is visually possible to skip steps by skipping indentations). This is the method used by Lamport. 
+      </li>
+      <li>Hierarchical structure by hypertext pop-ups: Subproofs can be shown by clicking on a proof step. This is the method demonstrated by Moyen <dt-cite key="moyen2016Hypertext"></dt-cite> and can be used 
+      in pdf files.</li>
+      <li>Hierarchical structure by expanding and collapsing text: Clicking on a proof steps pushes down the rest of the text, allocating space for presenting a lower-level subproof. This is actually the method preferred by both 
+        Lamport and Moyen, but can at this point not be realized in pdf files where blank space would need to be allocated in advance, showing first a document with huge areas of white space which is only filled if the reader 
+        decides to expand the hierarchical structure until the lowest possible level. It is possible to realize this in a web-based document. [Demonstrate?]
+      </li>
+    </ul>
+  
+  </p>
+  <figure class="l-body">
+      <img src="proof_moyen.png" width="514"/>
+      <figcaption>Hierarchical structure by hypertext pop-ups, from Moyen<dt-cite key="moyen2016Hypertext"></dt-cite> [fix scaling!]</figcaption>
+</figure>
+
+
+    <h1 id="header">Header in progress</h1>
+    <body>
+      <p>
+        <p  onclick="document.getElementById('theDiv').innerHTML = 'This is new.'">Click Me!</p>
+      </p>
+      <h3><div id="theDiv"></div></h3>
+    </body>
   <h2>Nonlinear narratives</h2>
   <p>Textbooks and scientific articles are usually written in a linear manner: Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader. The reader can stray from the path,
     jump over sections and ignore proofs which he deems to tedious to follow for the moment. Many (including the author) do this with an uneasy feeling of risking "missing out" on an important idea hidden in the ignored sections.
@@ -137,6 +183,12 @@ further.</p>
     year={2012},
     publisher={Springer}
   }
+
+  @article{moyen2016Hypertext,
+    title={Hypertext proofs},
+    author={Jean-Yves Moyen},
+    year={2016},
+    url={https://www-lipn.univ-paris13.fr/~moyen/Hypertext_proof/hypertext_proof.pdf}}
 
   @book{grundy1996browsable,
     title={A browsable format for proof presentation},
