@@ -28,7 +28,7 @@
  <p> 
   There are two ways out of this dilemma. First, we can narrow down specializations even more (creating researchers that don't study "stochastic partial differential equations (SPDEs)" but "SPDEs on separable Hilbert spaces allowing for a Lyapunov function with a strictly non-positive generator" (or whatever super-specialized research might arise in this future scenario)) such that there is less relevant material to be learned until novel research can be carried out. But this can only buy so much time and we suspect that there is an upper limit to specialization that will still attract people to mathematical research. </p>
   <p>
-  The second idea is to speed up the learning process (in the "climbing mountains" metaphor of Christopher Olah this means constructing elevators to skip the climb). In this essay we want to collect and present a few ideas on how to achieve this goal with the aid of new media. A lot of these ideas have been present for some time but with the development of newer and more flexible web technologies some concepts are now more easily implemented than ten years ago. We will talk about the following topics.</p>
+  The second idea is to speed up the learning process (in the "climbing mountains" metaphor of Christopher Olah this means constructing elevators to skip the climb). In this essay we want to collect and present a few ideas on how to achieve this goal with the aid of new media. A lot of these ideas have been present for some time but with the development of newer and more flexible web technologies some concepts are now more easily implemented than ten years ago. We will talk about the following topics.[REORDER]</p>
   <ul>
   <li>Leslie Lamport's hierarchical proof structure</li>
   <li>Nonlinear narratives</li>
@@ -44,10 +44,24 @@
 
   <h2>Scope of the article
   </h2>
-  <p>In this article, we try to collect ideas for how to better communicate mathematical concepts, both in research and in teaching</p>
+  <p>In this article, we try to collect ideas for how to better communicate mathematical concepts, both in research and in teaching.</p>
+
+  
+  <h2>Polya's four steps</h2>
+  <p>As presented in Cairns, Gown and Collins <dt-cite key="cairns2003dynamically"></dt-cite>, Polya's four steps to solving a problem are as follows.
+    <ol>
+      <li><b>Understand</b> the problem with examples, diagrams and a careful examination of each of the terms and unknowns in the problem.</li>
+      <li><b>Plan</b> how you intend to solve the problem.</li>
+      <li><b>Execute</b> the planned solution with care.</li>
+      <li><b>Reflect</b> on the result, how it relates to other results and how it might be proved differently.</li>
+    </ol>
+    <p>The authors argue that this method for problem solving can be applied verbatim to learning mathematics; and a teacher of mathematics (or someone writing a textbook or a scientific article) should present her material in a 
+        way such that the reader will (maybe inadvertently) follow these four steps. </p>
 
 
-  <h2>Lamport's expandable/collapsable proof structure</h2>
+  <h2>Hierarchical proof structure</h2> 
+
+
   <p>In his 2012 paper <dt-cite key="lamport2012write"></dt-cite>, Leslie Lamport advocated the introduction of <i>structured proofs</i> in mathematical literature. His basic message was that, while notation 
   has improved a lot (we now write $x^2 = 4$ instead of "what is the number which has the property of equating 4 when multiplied by itself?"), the mathematical community's way of writing down proofs was basically trapped in the 17th century.</p>
   <p>He proposed to use a <i>hierarchical</i> proof structure: </p>
@@ -79,7 +93,9 @@
       in pdf files.</li>
       <li>Hierarchical structure by expanding and collapsing text: Clicking on a proof steps pushes down the rest of the text, allocating space for presenting a lower-level subproof. This is actually the method preferred by both 
         Lamport and Moyen, but can at this point not be realized in pdf files where blank space would need to be allocated in advance, showing first a document with huge areas of white space which is only filled if the reader 
-        decides to expand the hierarchical structure until the lowest possible level. It is possible to realize this in a web-based document. [Demonstrate?]
+        decides to expand the hierarchical structure until the lowest possible level. It is possible to realize this in a web-based document.  <dt-fn>This was demonstrated by Cairns, Gow and Collins in <dt-cite key="cairns2003dynamically"></dt-cite>
+          although their interactive topology course sadly no longer exists. To our knowledge this is the only published report of hierarchical structure implemented for a whole set of lecture notes. It is also a very worthwhile read about mathematical didactic in itself.
+           Given how much web technology has advanced in the last 15 years it makes sense to revisit their ideas and realize them with modern web tools. We will talk more about their impulses later.</dt-fn>
       </li>
     </ul>
   
@@ -97,44 +113,65 @@
       </p>
       <h3><div id="theDiv"></div></h3>
     </body>
-  <h2>Nonlinear narratives</h2>
-  <p>Textbooks and scientific articles are usually written in a linear manner: Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader. The reader can stray from the path,
-    jump over sections and ignore proofs which he deems to tedious to follow for the moment. Many (including the author) do this with an uneasy feeling of risking "missing out" on an important idea hidden in the ignored sections.
-  </p>
-  <p>Humans have a deep-rooted passion for playing and exploring, with Friedrich Schiller going as far as to say "Man only plays when in the full meaning of the word he is a man, and he is only completely a man when he plays.". 
-    Many mathematical discoveries (as happened with breakthroughs in physics and engineering) only arose from someone thinking "what happens if I change this bit?". People love to tinker and to fiddle; and to observe the environment's reaction.
-    Furthermore, fun leads to passion, passion gives persistence and motivation, which in turn is necessary for the hard work needed in order to achieve anything meaningful. It makes sense to 
-    try and introduce "explorative fun" any time when teaching mathematics (be it lecturing undergrads or writing a research paper).
-  </p>
+  <h2>Multidimensional and hierarchical narratives</h2>
+  
+  <p>Cairns, Gown and Collins<dt-cite key="cairns2003dynamically"></dt-cite> very nicely explain how there are essentially two parameters to tune when writing down math: [Animation mit Schiebereglern?] </p>
+  <ul>
+    <li>Amount of details in the proof: Lots of details mean that the main idea of the proof might get obscured by technicalities, too few details means the reader cannot properly understand it.</li>
+    <li>Amount of contextual information<dt-fn>This means material outside the classical "lemma, theorem, proof, corollary" structure, i.e. examples, visualizations, explanations, hints at generalizations and applications etc.
+
+    </dt-fn>. This kind of "bonus material" is essentially irrelevant for the logical argument (and tiresome for an expert in the field just trying to find the main contribution of the text) but is necessary for 
+      a beginner in order to form a better mental representation of the material presented.</li>
+  </ul>
+  <p>Setting those parameters means choosing an audience: There are few textbooks which are read by both undergraduate students and researchers and indeed, as Cairns, Gown and Collins point out: A given mathematical text 
+  may not even be appropriate for a single reader at different times (with the reader progressing in her mathematical abilities, she may want less and less details in the proofs in order to more quickly absorb essential information).
+ </p>
+
+  <p>Media based on paper necessarily fixes these parameters once and for all. The use of "starring" sections (i.e. marking them as advanced material) or relegating technical proofs in the appendix can alleviate the issue, but permanently 
+      skipping sections makes for a tiresome and disorienting read.  </p>
+  
+      <p>With modern web technologies, we see essentially two possibilities in order to tackle this problem. The first possiblity is to apply the idea of hierarchicalization<dt-fn>as discussed for proof structures above</dt-fn>
+      and make whole sections of contextual information appear and disappear on the reader's whim. This might work nicely but we want to advocate a different way:</p>
+
+      <!--<p>Textbooks typically deal with that conundrum (if they do at all) by "starring" advanced topics or giving a roadmap of which sections to read for different kinds of readers [examples]. This addresses the problem,
+          but only partially solves it: In order to not exclude the "weakest relevant reader", the medium has to incorporate a vast amount of text which has to be skipped in whole by the "stronges relevant reader", leaving him with
+        the feeling that the resource he is consulting mostly consists of irrelevant material with only a few gems which are hard to find (even with navigational help by the author). More often than not, this will discourage him from reading
+      further.</p>
+      <p>A good textbook (or article) thus should be able to hide and show content depending on the expertise of the reader. Obviously this cannot happen automatically but we believe that the act of "minimizing" "irrelevant content"
+        will help the reader to manage the content better. 
+      </p>-->
+
+  <h3>Adding dimensionality</h3>
+  <p>Textbooks and scientific articles are usually written in a linear, contiguous manner: Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader. The reader can stray from the path,
+      jump over sections and ignore proofs which he deems to tedious to follow for the moment, but he is still forced to navigate his way through what is essentially a very long scroll of papyrus. 
+    </p>
+    <p>Humans have a deep-rooted passion for playing and exploring, with Friedrich Schiller going as far as to say "Man only plays when in the full meaning of the word he is a man, and he is only completely a man when he plays.". 
+        Many mathematical discoveries (as happened with breakthroughs in physics and engineering) only arose from someone thinking "what happens if I change this bit?". People love to tinker and to fiddle; and to observe the environment's reaction.
+        Furthermore, fun leads to passion, passion gives persistence and motivation, which in turn is necessary for the hard work needed in order to achieve anything meaningful. It makes sense to 
+        try and introduce "explorative fun" any time when teaching mathematics (be it lecturing undergrads or writing a research paper).
+      </p>
+ 
   <p>There is a caveat to this: Given too much explorative freedom, anyone will be overwhelmed by the amount of choices (you can't just give a high school student a licence of Matlab and tell him to "do numerics" with it).
     There is a sweet spot (which may be individually different) between the yoke of a very rigid textbook and unhelpful total freedom. We think that an instructive teaching medium has struck the balance if it 
     takes the reader by the hand, gently leads him towards helpful ideas, warns him of common misunderstandings but then takes a step back and waits for the reader to choose the directions in which he wants to proceed: 
     More rigor, more exercise, more details or more intuition (note that those categories are by no means mutually exclusive in the long term, but for someone starting to learn about a specific field they may be at first).
   </p>
-  <p>A second point to this is that no textbook and no article is read by a homogenous body of people but rather by experts and students, by someone just needing a specific definition or proof, or by someone who 
-    is trying to autodidactically learn about a certain subject. No two reader will have identical prerequisites or goals and thus will need different levels of detail and explanation. We have seen this fact when we talked 
-  about expandable proof structure but the gist of it applies to the structure of a whole document as well. </p>
-  <p>Textbooks typically deal with that conundrum (if they do at all) by "starring" advanced topics or giving a roadmap of which sections to read for different kinds of readers [examples]. This addresses the problem,
-    but only partially solves it: In order to not exclude the "weakest relevant reader", the medium has to incorporate a vast amount of text which has to be skipped in whole by the "stronges relevant reader", leaving him with
-  the feeling that the resource he is consulting mostly consists of irrelevant material with only a few gems which are hard to find (even with navigational help by the author). More often than not, this will discourage him from reading
-further.</p>
-<p>A good textbook (or article) thus should be able to hide and show content depending on the expertise of the reader. Obviously this cannot happen automatically but we believe that the act of "minimizing" "irrelevant content"
-  will help the reader to manage the content better. 
-</p>
-<p>Another counterdraft to a contiguous textbook might be to use a non-linear document structure. A conventional text is actually just a long scroll of paper, but a graph (or tree) structure might to the trick: 
-  A text would necessarily need a stem covering the main story with branches diverting to "building intuition", "generalization to metric spaces", "more examples and counterexamples", "applications to physics" etc. 
-  Most readers will find some of those branches, but not all of them, interesting. By presenting the material in this form, the reader does not need to skip a large number of pages, losing track of what he read and what he leapt over.
-</p>
-
-  <h2>Polya's four steps</h2>
-  <p>As presented in <dt-cite key="cairns2003dynamically"></dt-cite>, Polya's four steps to solving a problem are as follows.
-    <ol>
-      <li><b>Understand</b> the problem with examples, diagrams and a careful examination of each of the terms and unknowns in the problem.</li>
-      <li><b>Plan</b> how you intend to solve the problem.</li>
-      <li><b>Execute</b> the planned solution with care.</li>
-      <li><b>Reflect</b> on the result, how it relates to other results and how it might be proved differently.</li>
-    </ol>
+  <p>Instead of just hiding and expanding sections which seem interesting to the reader, it would make for an immersive experience if she could actually "go in different directions", not only figuratively (while still being 
+    constrained to the one-dimensionality of the document), but literally: If a classical document (even with dynamically expanding and collapsing sections) can be compared to a continuous scroll, we hereby mean reading 
+    a tree-like structure, with a stem covering the main story with branches diverting to "building intuition", "generalization to metric spaces", "more examples and counterexamples", "applications to physics" etc. 
+    Most readers will find some of those branches, but not all of them, interesting. By presenting the material in this form, the reader does not need to skip a large number of pages, 
+    losing track of what he read and what he leapt over. As humans usually have a decent way of navigating themselves in two dimensions<dt-fn>we do not use three dimensions like birds do</dt-fn>, this seemingly
+    confusing structure might actually lead to an improved orientational sense inside a document<dt-fn>The authors have often found themselves in a situation where they were looking for a specific definition, remark or proof
+      which they had read earlier but couldn't remember where exactly it was located. This is not just unnecessary time loss but also breaks concentration.
+    </dt-fn>. 
   </p>
+  <!--<p>A second point to this is that no textbook and no article is read by a homogenous body of people but rather by experts and students, by someone just needing a specific definition or proof, or by someone who 
+    is trying to autodidactically learn about a certain subject. No two reader will have identical prerequisites or goals and thus will need different levels of detail and explanation. We have seen this fact when we talked 
+  about expandable proof structure but the gist of it applies to the structure of a whole document as well. </p>-->
+  
+
+
+    
   
   <h2>Animation and visualization</h2>
    <p>Mathematical intuition seems to be a contradiction in terms: Intuition is a quick and dirty answering tool shaped by our everday experience: When we show someone a video of a person throwing a ball and we stop the video a few seconds into the ball's trajectory, we will get a roughly correct answer for "Where will it land?". We have an intuition for where a ball thrown by hand will land approximately even without making the calculations. On the other hand, we don't have an intuition for the dynamics of a ball thrown with 90% speed of light because it lies outside of what we see every day [according to whatif, it is not good]. By definition, abstract mathematics lies outside of our immediate everyday experience. Nevertheless, when mathematicians work, one can often hear things like "Intuitively I think you're right, but how do we prove that? Maybe we should try ..., this feels like a good idea.". The choice of words here betray that the mathematician actually has some kind of intuition on this topic, not shaped by everyday experience but by hours and hours of study. </p>
@@ -149,6 +186,7 @@ further.</p>
       <li>High workload</li>
       <li>Can't be outsourced outside of research community</li>
       <li>Paper is mostly too inflexible: Hard to publish and make permanent (internet technology gets outdated)!</li>
+      <li>Technology gets outdated and looks old after some time. But: Books also get less easy to read, see for example Henry</li>
     </ul>
   </p>
   
