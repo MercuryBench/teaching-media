@@ -60,9 +60,10 @@
     <ol>
         <li><b>Build intuition</b> about the theorem's implication and the necessity of its prerequisites.</li>
         <li><b>Sketch</b> the proof, i.e. give an outline of its most core elements.</li>
-        <li><b>Execute</b> the proof in detail</li>
+        <li><b>Execute</b> the proof in detail<dt-fn>Steps 2 and 3 may be realized by the hierarchical structure described below</dt-fn></li>
         <li><b>Reflect</b> on the theorem's use in subsequent theory or in applications, on its versions in more general settings, or on variants of the proof.</li>
     </ol> 
+    <p>We believe that this four step system as presented in <dt-cite key="cairns2003dynamically"></dt-cite> is a helpful tool to keep in mind. [Überleitung]</p>
 
 
   <h2>Hierarchical proof structure</h2> 
@@ -82,7 +83,7 @@
     </div>
   </figure>
 
-  <p>Now every step of the proof is clearly contains all the "ins and outs". Now some reader may struggle with step 2: The application of the Mean Value Theorem
+  <p>Now every step of the proof clearly contains all the "ins and outs". Now some reader may struggle with step 2: The application of the Mean Value Theorem
     requires a function to be continous but he only sees a differentiable function. This means we need a sub-proof for the fact every differentiable function is continous. At this point we can either refer to a lemma 
     which might have proven this fact before or we can follow Lamport's suggestion to insert a sub-proof.
   </p>
@@ -100,8 +101,7 @@
       <li>Hierarchical structure by expanding and collapsing text: Clicking on a proof steps pushes down the rest of the text, allocating space for presenting a lower-level subproof. This is actually the method preferred by both 
         Lamport and Moyen, but can at this point not be realized in pdf files where blank space would need to be allocated in advance, showing first a document with huge areas of white space which is only filled if the reader 
         decides to expand the hierarchical structure until the lowest possible level. It is possible to realize this in a web-based document.  <dt-fn>This was demonstrated by Cairns, Gow and Collins in <dt-cite key="cairns2003dynamically"></dt-cite>
-          although their interactive topology course sadly no longer exists. To our knowledge this is the only published report of hierarchical structure implemented for a whole set of lecture notes. It is also a very worthwhile read about mathematical didactic in itself.
-           Given how much web technology has advanced in the last 15 years it makes sense to revisit their ideas and realize them with modern web tools. We will talk more about their impulses later.</dt-fn>
+          although their interactive topology course sadly no longer exists. To our knowledge this is the only published report of hierarchical structure implemented for a whole set of lecture notes. It is also a very worthwhile read about mathematical didactic in itself. Given how much web technology has advanced in the last 15 years it makes sense to revisit their ideas and realize them with modern web tools. We will talk more about their impulses later. Note also Grundy's description <dt-cite key="grundy1996browsable"></dt-cite> of a software for "proof browsing".</dt-fn>
       </li>
     </ul>
   
@@ -182,7 +182,7 @@
   <h2>Animation and visualization</h2>
    <p>Mathematical intuition seems to be a contradiction in terms: Intuition is a quick and dirty answering tool shaped by our everday experience: When we show someone a video of a person throwing a ball and we stop the video a few seconds into the ball's trajectory, we will get a roughly correct answer for "Where will it land?". We have an intuition for where a ball thrown by hand will land approximately even without making the calculations. On the other hand, we don't have an intuition for the dynamics of a ball thrown with 90% speed of light because it lies outside of what we see every day [according to whatif, it is not good]. By definition, abstract mathematics lies outside of our immediate everyday experience. Nevertheless, when mathematicians work, one can often hear things like "Intuitively I think you're right, but how do we prove that? Maybe we should try ..., this feels like a good idea.". The choice of words here betray that the mathematician actually has some kind of intuition on this topic, not shaped by everyday experience but by hours and hours of study. </p>
    
-   <p> In our experience, intuition comes with specific mental imagery: The simplex algorithm for linear optimization problems can be posed in the language of linear inequalities as a sequence of Gaussian elimination steps. It is a lot more revealing, though, to think of the Simplex algorithm as jumping from vertex to vertex, while always improving on the value of the objective functional. Similarly, there is often a "particularly good" way of thinking about a mathematical concept. In many cases, this "good way" is both most easily expressed and stored in memory when presented visually. In some cases this visual representation may or may not be present in the mathematical community but it is not effectively taught in courses and not explained in most textbooks. One example for this is the "bar plot" imagery for entropy (from information theory). Apart from [Chris Olah's blog post and MacKay's book, weiter recherchieren ob das wirklich selten ist] we personally know no resources that explain entropy in this manner. [Further examples: 1-forms as surfaces that are pierced. Good example: MTW, bad example: most texts about differential forms] [The geometry of behaviour: Book only with visualizations] [internet and web technology allows creation and sharing of awesome 3d animations: Use that!]</p>
+   <p> In our mathematical experience, intuition comes with specific mental imagery: The simplex algorithm for linear optimization problems can be posed in the language of linear inequalities as a sequence of Gaussian elimination steps. It is a lot more revealing, though, to think of the Simplex algorithm as jumping from vertex to vertex, always improving on the value of the objective functional. Generally, there is often a "particularly good" way of thinking about a mathematical concept. In many cases, this "good way" is both most easily expressed and stored in memory when presented visually. In some cases this visual representation may or may not be present in the mathematical community but it is not effectively taught in courses and not explained in most textbooks. One example for this is the "bar plot" imagery for entropy (from information theory). Apart from [Chris Olah's blog post and MacKay's book, weiter recherchieren ob das wirklich selten ist, ja scheint so zu sein] we personally know no resources that explain entropy in this manner. [Further examples: 1-forms as surfaces that are pierced. Good example: MTW, bad example: most texts about differential forms] [The geometry of behaviour: Book only with visualizations] [internet and web technology allows creation and sharing of awesome 3d animations: Use that!]</p>
   <h2>Further topics: Gamification, Bret Victor, use of oral explanation (videos) ... </h2>
   <p></p>
   
@@ -193,6 +193,7 @@
       <li>Can't be outsourced outside of research community</li>
       <li>Paper is mostly too inflexible: Hard to publish and make permanent (internet technology gets outdated)!</li>
       <li>Technology gets outdated and looks old after some time. But: Books also get less easy to read, see for example Henry</li>
+      <li>Hierarchical structure is not adapted universally well <dt-cite key="cairns2003theoretical"></dt-cite>
     </ul>
   </p>
   
@@ -209,16 +210,9 @@
 </dt-appendix>
 
 <script type="text/bibliography">
-  @article{gregor2015draw,
-    title={DRAW: A recurrent neural network for image generation},
-    author={Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan},
-    journal={arXivreprint arXiv:1502.04623},
-    year={2015},
-    url={https://arxiv.org/pdf/1502.04623.pdf}
-  }
 
   @article{lamport2012write,
-    title={How to write a 21 st century proof},
+    title={How to write a 21st century proof},
     author={Lamport, Leslie},
     journal={Journal of fixed point theory and applications},
     volume={11},
