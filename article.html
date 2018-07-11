@@ -18,37 +18,34 @@
   <h2>A description of the article</h2>
   <dt-byline></dt-byline>
 
-  <h2>Research debt and crippling specialization</h2>
+  <h2>Research debt and crippling specialization [lieber: Impossible climb?]</h2>
   <p>The last true polymath is said to have been Gottfried Wilhelm Leibniz, with countless contributions to logic, philosophy, mathematics, engineering, psychology, physics, law and various other fields. 
     Few of us can say to have a similarly broad expertise; even more: Most researchers would label themselves not as mathematicians but as topologists, probabilists or computational scientists; not as physicists, 
   but as experimental physicists or  string theorists etc. It is believed that this is not due to humanity becoming less intelligent but due to science becoming more and more specialised: If Leibniz's endeavours are likened
   to climbing all mountains in the Austrian Alps (which is no mean feat but possible given enough perseverance), a modern scientist aspiring to be a true polymath faces a challenge similar to that of scaling every elevation higher than 500m on Earth as well as on any known celestial object in the solar system.</p>
-  <p> This also affects students aspiring to become researchers themselves: The long way to the "battlefront" of current research becomes longer with every new proven result. Thought through, this means that -- given nothing changes -- there is a natural limit to research happening at a point where coming to speed with current research takes a whole lifetime. 
+  <p> This also affects students aspiring to become researchers themselves: The long climb to the peak of current research becomes longer and more tedious with every new proven result stacked on top of the mountain of mathematics. Thought through, this means that -- given nothing changes -- there is a natural limit to research happening at a point where coming to speed with current research takes a whole lifetime. 
  </p>
  <p> 
   There are two ways out of this dilemma. First, we can narrow down specializations even more (creating researchers that don't study "stochastic partial differential equations (SPDEs)" but "SPDEs on separable Hilbert spaces allowing for a Lyapunov function with a strictly non-positive generator" (or whatever super-specialized research might arise in this future scenario)) such that there is less relevant material to be learned until novel research can be carried out. But this can only buy so much time and we suspect that there is an upper limit to specialization that will still attract people to mathematical research. </p>
   <p>
-  The second idea is to speed up the learning process (in the "climbing mountains" metaphor of Christopher Olah this means constructing elevators to skip the climb). In this essay we want to collect and present a few ideas on how to achieve this goal with the aid of new media. A lot of these ideas have been present for some time but with the development of newer and more flexible web technologies some concepts are now more easily implemented than ten years ago. We will talk about the following topics.[REORDER]</p>
+  The second idea is to speed up the learning process (in the spirit of Christopher Olah's article <dt-cite key="olah2017research"></dt-cite> this means constructing elevators to skip the climb). In this essay we want to collect and present a few ideas on how to achieve this goal with the aid of new media, adding a few thoughts of our own. A lot of these ideas have been present for some time but with the development of newer and more flexible web technologies some concepts are now more easily implemented than ten years ago. We will talk about the following topics.[REORDER]</p>
   <ul>
-  <li>Leslie Lamport's hierarchical proof structure</li>
-  <li>Nonlinear narratives</li>
   <li>Polya's four steps as a general guideline for mathematical teaching</li>
+  <li>Leslie Lamport's hierarchical proof structure</li>
+  <li>Hierarchical and multidimensional narratives</li>
   <li>Visualization and animation</li>
   </ul>
-  <p>We will then talk about some hurdles to the implementation of these measures and conclude with an incomplete list of "best practices".</p>
+  <p>We will then discuss some hurdles to the implementation of these measures and conclude with an incomplete list of "best practices".</p>
   
   
-
- 
-  <p>[Christopher Olah's text: Research debt, building elevators, both in research and teaching. Change analogy to mines instead of mountains (manmade structures, top-down structure of books)]</p>
-
-  <h2>Scope of the article
+  <!-- <h2>Scope of the article
   </h2>
-  <p>In this article, we try to collect ideas for how to better communicate mathematical concepts, both in research and in teaching.</p>
+  <p>In this article, we try to collect ideas for how to better communicate mathematical concepts, both in research and in teaching.</p> -->
 
   
   <h2>Polya's four steps</h2>
   <p>As presented in Cairns, Gown and Collins <dt-cite key="cairns2003dynamically"></dt-cite>, Polya's four steps to solving a problem are as follows.
+    <h3>Polya's four steps for solving problems</h3>
     <ol>
       <li><b>Understand</b> the problem with examples, diagrams and a careful examination of each of the terms and unknowns in the problem.</li>
       <li><b>Plan</b> how you intend to solve the problem.</li>
@@ -57,6 +54,15 @@
     </ol>
     <p>The authors argue that this method for problem solving can be applied verbatim to learning mathematics; and a teacher of mathematics (or someone writing a textbook or a scientific article) should present her material in a 
         way such that the reader will (maybe inadvertently) follow these four steps. </p>
+    <p> Translated into the language of teaching mathematics, these four steps can be posed as follows</p>
+    
+    <h3>Polya's four steps for teaching mathematics<dt-fn>This is for the example of presenting a theorem and its proof. This has to be rephrased slightly for definitions</dt-fn></h3>
+    <ol>
+        <li><b>Build intuition</b> about the theorem's implication and the necessity of its prerequisites.</li>
+        <li><b>Sketch</b> the proof, i.e. give an outline of its most core elements.</li>
+        <li><b>Execute</b> the proof in detail</li>
+        <li><b>Reflect</b> on the theorem's use in subsequent theory or in applications, on its versions in more general settings, or on variants of the proof.</li>
+    </ol> 
 
 
   <h2>Hierarchical proof structure</h2> 
@@ -193,7 +199,7 @@
   <h2>Best practices</h2>
   <p>
     <ul>
-      <li>Books: MacKay, Dynamics (Geometry of Behavior), A slower speed of light</li>
+      <li>Books: MacKay, Dynamics (Geometry of Behavior), A slower speed of light, Michael Nielsen</li>
     </ul>
   </p>
   
@@ -243,6 +249,17 @@
     year={2003},
     organization={Springer}
   }
+  
+  @article{olah2017research,
+  title={Research debt},
+  author={Olah, Chris and Carter, Shan},
+  journal={Distill},
+  volume={2},
+  number={3},
+  pages={e5},
+  year={2017}
+}
+
 
   @article{cairns2003dynamically,
     title={On dynamically presenting a topology course},
