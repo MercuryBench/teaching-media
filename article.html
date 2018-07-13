@@ -260,8 +260,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
   <p>Media based on paper necessarily fixes these parameters once and for all. The use of "starring" sections (i.e. marking them as advanced material) or relegating technical proofs in the appendix can alleviate the issue, but permanently 
       skipping sections makes for a tiresome and disorienting read.  </p>
   
-      <p>With modern web technologies, we see essentially two possibilities in order to tackle this problem. The first possiblity is to apply the idea of hierarchicalization<dt-fn>as discussed for proof structures above</dt-fn>
-      and make whole sections of contextual information appear and disappear on the reader's whim. This might work nicely but we want to advocate a different way:</p>
+  <p>With modern web technologies, we see essentially two possibilities in order to tackle this problem. The first possiblity is to apply the idea of hierarchicalization<dt-fn>as discussed for proof structures above</dt-fn>
+    and make whole sections of contextual information appear and disappear on the reader's whim. This might work nicely but we want to advocate a different way:</p>
 
       <!--<p>Textbooks typically deal with that conundrum (if they do at all) by "starring" advanced topics or giving a roadmap of which sections to read for different kinds of readers [examples]. This addresses the problem,
           but only partially solves it: In order to not exclude the "weakest relevant reader", the medium has to incorporate a vast amount of text which has to be skipped in whole by the "stronges relevant reader", leaving him with
@@ -270,17 +270,47 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
       <p>A good textbook (or article) thus should be able to hide and show content depending on the expertise of the reader. Obviously this cannot happen automatically but we believe that the act of "minimizing" "irrelevant content"
         will help the reader to manage the content better. 
       </p>-->
+  
 
-  <h3>Adding dimensionality</h3>
+  <h2>Gamification</h2>
+  <p>Humans have a deep-rooted passion for playing and exploring, with Friedrich Schiller going as far as to say "Man only plays when in the full meaning of the word he is a man, and he is only completely a man when he plays.". 
+    Many mathematical discoveries (as happened with breakthroughs in physics and engineering) only arose from someone thinking "what happens if I change this bit?". People love to tinker and to fiddle; and to observe the environment's reaction.
+    Furthermore, fun leads to passion, passion gives persistence and motivation, which in turn is necessary for the hard work needed in order to achieve anything meaningful. 
+  </p>
+  <p>Another facet of the power of playing is that it helps acquiring familiarity and intuition. To understand this we need to think about what playing really is: Children play in order to see how things work. When they
+    knock over a tower of bricks they do not mean to be destructive, they are trying to understand statics and gravity. No parent would try to teach their toddler Newton's laws of motion, because playing is an incredible
+    shortcut to a kind of understanding which may not be exact, but approximately correct and intuitive<dt-fn>By this we mean that a child may not be able to calculate the exact point of impact of a thrown ball, but it will 
+      intuitively predict a roughly correct area in which it will land. </dt-fn>. Later, when the child learns about mechanics in school, its experience will help him internalize the analytical method of predicting. 
+  </p>
+  <p>While the importance of playing for children and their development has been widely acknowledged, there is a growing body of literature suggesting that adults can benefit a lot from playing, too. The authors are no 
+    experts in psychology and so we will not get into that but just state an unproven proposition: Playing helps people to gain informal and intuitive familiarity with some object or system which can help them when they are thinking 
+    about it in an analytical way.
+  </p>
+  <figure class="l-body">
+      <img src="assol1.png"/>
+      <figcaption>Gameplay from "A slower speed of light"<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
+</figure>
+  <p>One example for this is the game "A slower speed of light" (By the MIT Game Lab). The game objective is very simple: Pick up 100 orbs by walking around in a slightly Kafkaesque landscape. Every orb you pick up reduces your environment's 
+    speed of light by a small amount (while your own maximum speed is unchanges), until your own speed reaches the speed of light with the 100th orb. By doing that, you can experience step by step relativistic effects: The doppler effect changes the colors of objects,
+   the searchlight effect brightens objects which lie ahead of you and the whole scenery gets warped almost beyond recognition.  </p>
+   <p>By playing "A slower speed of light" you can get familiarity and almost "real life experience" with something which is classically beyond the reach of our senses. After some time you intuitively know in which direction 
+     the giant mushrooms in the landscape will (seem to) bend when you whizz past them with 90% speed of light. When you later calculate length dilation with pencil and paper there is a good chance you will be able to 
+    match the outcome with your newly acquired relativistic intuition and say "Yep, this sounds about right".</p>
+
+    <p>Or take the short browser game "District". It teaches you how how to edit voting districts in order to secure your candidate's victory even if the majority of voters is not voting for him. This teaches 
+      the basics of gerrymandering better (and quicker) than reading an article about it could.</p>
+      <figure class="l-body">
+          <img src="district.png"/>
+          <figcaption>Gameplay from "A slower speed of light"<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
+    </figure>
+  <h2>Adding dimensionality</h2>
   <p>Textbooks and scientific articles are usually written in a linear, contiguous manner: Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader. The reader can stray from the path,
       jump over sections and ignore proofs which he deems to tedious to follow for the moment, but he is still forced to navigate his way through what is essentially a very long scroll of papyrus. 
     </p>
-    <p>Humans have a deep-rooted passion for playing and exploring, with Friedrich Schiller going as far as to say "Man only plays when in the full meaning of the word he is a man, and he is only completely a man when he plays.". 
-        Many mathematical discoveries (as happened with breakthroughs in physics and engineering) only arose from someone thinking "what happens if I change this bit?". People love to tinker and to fiddle; and to observe the environment's reaction.
-        Furthermore, fun leads to passion, passion gives persistence and motivation, which in turn is necessary for the hard work needed in order to achieve anything meaningful. It makes sense to 
-        try and introduce "explorative fun" any time when teaching mathematics (be it lecturing undergrads or writing a research paper).
-      </p>
- 
+    
+    
+ <p>We talked about people loving to play and explore and so it makes sense to 
+  try and introduce "explorative fun" any time when teaching mathematics (be it lecturing undergrads or writing a research paper).</p>
   <p>There is a caveat to this: Given too much explorative freedom, anyone will be overwhelmed by the amount of choices (you can't just give a high school student a licence of Matlab and tell him to "do numerics" with it).
     There is a sweet spot (which may be individually different) between the yoke of a very rigid textbook and unhelpful total freedom. We think that an instructive teaching medium has struck the balance if it 
     takes the reader by the hand, gently leads him towards helpful ideas, warns him of common misunderstandings but then takes a step back and waits for the reader to choose the directions in which he wants to proceed: 
@@ -311,8 +341,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
      The choice of words here betray that the mathematician actually has some kind of intuition on this topic, not shaped by everyday experience but by hours and hours of study. </p>
    
    <p> In our mathematical experience, intuition comes with specific mental imagery: The simplex algorithm for linear optimization problems can be posed in the language of linear inequalities as a sequence of Gaussian elimination steps. It is a lot more revealing, though, to think of the Simplex algorithm as jumping from vertex to vertex, always improving on the value of the objective functional. Generally, there is often a "particularly good" way of thinking about a mathematical concept. In many cases, this "good way" is both most easily expressed and stored in memory when presented visually. In some cases this visual representation may or may not be present in the mathematical community but it is not effectively taught in courses and not explained in most textbooks. One example for this is the "bar plot" imagery for entropy (from information theory). Apart from [Chris Olah's blog post and MacKay's book, weiter recherchieren ob das wirklich selten ist, ja scheint so zu sein] we personally know no resources that explain entropy in this manner. [Further examples: 1-forms as surfaces that are pierced. Good example: MTW, bad example: most texts about differential forms] [The geometry of behaviour: Book only with visualizations] [internet and web technology allows creation and sharing of awesome 3d animations: Use that!]</p>
-  <h2>Further topics: Gamification, Bret Victor, use of oral explanation (videos) ... </h2>
-  <p></p>
+  
   
   <h2>Hurdles and challenges</h2>
   <p>
@@ -328,7 +357,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
   <h2>Best practices</h2>
   <p>
     <ul>
-      <li>Books: MacKay, Dynamics (Geometry of Behavior), A slower speed of light, Michael Nielsen</li>
+      <li>Books: MacKay, Dynamics (Geometry of Behavior), A slower speed of light, Michael Nielsen (Neural Networks), Bret Victor</li>
     </ul>
   </p>
   
