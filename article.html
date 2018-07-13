@@ -4,7 +4,7 @@
 
 <script type="text/front-matter">
   title: "Article Title"
-  description: "Description of the post"
+  description: "Article description"
   authors:
   - Philipp Wacker:
   affiliations:
@@ -15,20 +15,21 @@
 </script>
 <dt-article>
   <h1>Reducing research debt </h1>
-  <h2>A description of the article</h2>
+  <h2>A few ideas on the use of web technology to present distilled research (and become a better teacher in mathematics<dt-fn>This article is written from the perspective of a mathematician, but it should be easily translated into physics, computer science and related fields.</dt-fn>)</h2>
   <dt-byline></dt-byline>
 
-  <h2>Research debt and crippling specialization [lieber: Impossible climb?]</h2>
+  <h2>The impossible climb</h2>
   <p>The last true polymath is said to have been Gottfried Wilhelm Leibniz, with countless contributions to logic, philosophy, mathematics, engineering, psychology, physics, law and various other fields. 
     Few of us can say to have a similarly broad expertise; even more: Most researchers would label themselves not as mathematicians but as topologists, probabilists or computational scientists; not as physicists, 
   but as experimental physicists or  string theorists etc. It is believed that this is not due to humanity becoming less intelligent but due to science becoming more and more specialised: If Leibniz's endeavours are likened
-  to climbing all mountains in the Austrian Alps (which is no mean feat but possible given enough perseverance), a modern scientist aspiring to be a true polymath faces a challenge similar to that of scaling every elevation higher than 500m on Earth as well as on any known celestial object in the solar system.</p>
+  to climbing all mountains in the Austrian Alps (which is no mean feat but possible given sufficient fitness and perseverance), a modern scientist aspiring to be a true polymath faces a challenge similar to that of scaling every elevation higher than 500m on Earth as well as on any known celestial object in the solar system.</p>
   <p> This also affects students aspiring to become researchers themselves: The long climb to the peak of current research becomes longer and more tedious with every new proven result stacked on top of the mountain of mathematics. Thought through, this means that -- given nothing changes -- there is a natural limit to research happening at a point where coming to speed with current research takes a whole lifetime. 
+    This constitutes an <i>impossible climb.</i>
  </p>
  <p> 
   There are two ways out of this dilemma. First, we can narrow down specializations even more (creating researchers that don't study "stochastic partial differential equations (SPDEs)" but "SPDEs on separable Hilbert spaces allowing for a Lyapunov function with a strictly non-positive generator" (or whatever super-specialized research might arise in this future scenario)) such that there is less relevant material to be learned until novel research can be carried out. But this can only buy so much time and we suspect that there is an upper limit to specialization that will still attract people to mathematical research. </p>
   <p>
-  The second idea is to speed up the learning process (in the spirit of Christopher Olah's article <dt-cite key="olah2017research"></dt-cite> this means constructing elevators to skip the climb). In this essay we want to collect and present a few ideas on how to achieve this goal with the aid of new media, adding a few thoughts of our own. A lot of these ideas have been present for some time but with the development of newer and more flexible web technologies some concepts are now more easily implemented than ten years ago. We will talk about the following topics.[REORDER]</p>
+  The second idea is to speed up the learning process (in the spirit of Christopher Olah's article <dt-cite key="olah2017research"></dt-cite> this means constructing elevators to skip the climb). In this essay we want to collect and present a few ideas on how to achieve this goal with the aid of new media, adding a few thoughts of our own. A lot of these ideas have been present for some time but with the development of newer and more flexible web technologies some concepts are now more easily implemented than ten years ago. We will talk about the following topics.</p>
   <ul>
   <li>Polya's four steps as a general guideline for mathematical teaching</li>
   <li>Leslie Lamport's hierarchical proof structure</li>
@@ -44,26 +45,29 @@
 
   
   <h2>Polya's four steps</h2>
-  <p>As presented in Cairns, Gown and Collins <dt-cite key="cairns2003dynamically"></dt-cite>, Polya's four steps to solving a problem are as follows.
-    <h3>Polya's four steps for solving problems</h3>
+  <p>Cairns, Gown and Collins <dt-cite key="cairns2003dynamically"></dt-cite> present Polya's four steps to solving a problem.
+        <h3>Polya's four steps for solving problems</h3>
     <ol>
       <li><b>Understand</b> the problem with examples, diagrams and a careful examination of each of the terms and unknowns in the problem.</li>
       <li><b>Plan</b> how you intend to solve the problem.</li>
       <li><b>Execute</b> the planned solution with care.</li>
       <li><b>Reflect</b> on the result, how it relates to other results and how it might be proved differently.</li>
     </ol>
+    <!--<figcaption>Polya's four steps for solving problems</figcaption>-->
     <p>The authors argue that this method for problem solving can be applied verbatim to learning mathematics; and a teacher of mathematics (or someone writing a textbook or a scientific article) should present her material in a 
         way such that the reader will (maybe inadvertently) follow these four steps. </p>
-    <p> Translated into the language of teaching mathematics, these four steps can be posed as follows</p>
+    <p> Translated into the language of teaching mathematics, these four steps can be reformulated.</p>
     
-    <h3>Polya's four steps for teaching mathematics<dt-fn>This is for the example of presenting a theorem and its proof. This has to be rephrased slightly for definitions</dt-fn></h3>
+    
+    <h3>Polya's four steps for teaching mathematics<dt-fn>This is for the example of presenting a theorem and its proof. It has to be rephrased slightly for presenting definitions</dt-fn></h3>
     <ol>
         <li><b>Build intuition</b> about the theorem's implication and the necessity of its prerequisites.</li>
         <li><b>Sketch</b> the proof, i.e. give an outline of its most core elements.</li>
         <li><b>Execute</b> the proof in detail<dt-fn>Steps 2 and 3 may be realized by the hierarchical structure described below</dt-fn></li>
         <li><b>Reflect</b> on the theorem's use in subsequent theory or in applications, on its versions in more general settings, or on variants of the proof.</li>
     </ol> 
-    <p>We believe that this four step system as presented in <dt-cite key="cairns2003dynamically"></dt-cite> is a helpful tool to keep in mind. [Überleitung]</p>
+    <p>We believe that this four step system as presented in <dt-cite key="cairns2003dynamically"></dt-cite> is a helpful guiding concept to keep in mind for the rest of the article. We continue with discussing 
+    a didactical concept proposed by Leslie Lamport, the developer of LaTeX.</p>
 
 
   <h2>Hierarchical proof structure</h2> 
@@ -83,7 +87,7 @@
     </div>
   </figure>
 
-  <p>Now every step of the proof clearly contains all the "ins and outs". Now some reader may struggle with step 2: The application of the Mean Value Theorem
+  <p>The expanded version (on the right hand side) clearly marks all the "ins and outs" in every step of the proof. Now some reader may struggle with step 2: The application of the Mean Value Theorem
     requires a function to be continous but he only sees a differentiable function. This means we need a sub-proof for the fact every differentiable function is continous. At this point we can either refer to a lemma 
     which might have proven this fact before or we can follow Lamport's suggestion to insert a sub-proof.
   </p>
@@ -91,10 +95,11 @@
         <img src="proof_substep.png" width="514"/>
         <figcaption>Subproof of step 2, from Lamport<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
   </figure>
-  <p>These levels of detail can be included in a hierarchical proof in at least three ways. 
+  <p>A hierarchical proof can be implemented in at least three ways. 
     <ul>
-      <li>Hierarchical structure by indentation: All substeps are shown always and structured by various degrees of indentation. This is the only viable method for print but has the draw-back of never hiding 
-        unnecessary information for advanced readers (although it is visually possible to skip steps by skipping indentations). This is the method used by Lamport. 
+      <li>Hierarchical structure by indentation: All substeps are shown always and are structured by various degrees of indentation. This is the only viable method for print but has the draw-back of never hiding 
+        unnecessary information for advanced readers (although it is visually possible to skip steps by skipping indentations). This is the method used by Lamport in <dt-cite key="lamport2012write"></dt-cite> although he
+        states that using hypertext (see next bullet point) is even better. 
       </li>
       <li>Hierarchical structure by hypertext pop-ups: Subproofs can be shown by clicking on a proof step. This is the method demonstrated by Moyen <dt-cite key="moyen2016Hypertext"></dt-cite> and can be used 
       in pdf files.</li>
@@ -111,17 +116,136 @@
       <figcaption>Hierarchical structure by hypertext pop-ups, from Moyen<dt-cite key="moyen2016Hypertext"></dt-cite> [fix scaling!]</figcaption>
 </figure>
 
+<script>
 
-    <h1 id="header">Header in progress</h1>
-    <body>
-      <p>
-        <p  onclick="document.getElementById('theDiv').innerHTML = 'This is new.'">Click Me!</p>
-      </p>
-      <h3><div id="theDiv"></div></h3>
-    </body>
+
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <h2 id="header">Interactive hierarchical proof structure</h1>
+      <p>It follows a demonstration of how an interactive hierarchical structure could work on a webpage<dt-fn>Please do not look at the source code of this example.</dt-fn>. For example, click on the proof of step 2 to expand and click again on 
+      the expanded proof to collapse.</p> 
+     <p>Corollary: If $f'(x)>0$ for all $x$ in an interval $I$, then $f$ is increasing on $I$.</p>
+     <p>Proof:</p>
+      <ol>
+          
+          <li><p id=step1></p>
+          <p id="proof1" onclick=clickproof1()></p>
+          <p id="prooftext1" onclick=clickprooftext1()></p></li>
+          <li><p id=step2></p>
+          <p id="proof2" onclick=clickproof2()></p>
+          <p id="prooftext2" onclick=clickprooftext2()></p></li>
+          <li><p id=step3></p>
+          <p id="proof3" onclick=clickproof3()>Proof</p>
+          <p id="prooftext3" onclick=clickprooftext3()></p></li>
+          <li><p id=step4></p>
+          <p id="proof4" onclick=clickproof4()>Proof</p>
+          <p id="prooftext4" onclick=clickprooftext4()></p></li>
+          <li><p id=step5></p>
+          <p id="proof5" onclick=clickproof5()>Proof</p>
+          <p id="prooftext5" onclick=clickprooftext5()></p></li>
+          <script>
+              var textstep1 = "It suffices to assume <ol><li>$a$ and $b$ are points in $I$</li><li>$a&lt;b$</li></ol> and prove $f(b) &gt; f(a)$."
+              document.getElementById('step1').innerHTML = textstep1
+              var textstep2 = "There is some $x$ in $(a,b)$ with $f'(x) = \\frac{f(b)-f(a)}{b-a}$."
+              document.getElementById('step2').innerHTML = textstep2
+              var textstep3 = "$f'(x)>0$ for all $x$ in $(a,b)$"
+              document.getElementById('step3').innerHTML = textstep3
+              var textstep4 = "$\frac{f(b)-f(a)}{b-a} > 0$"
+              document.getElementById('step4').innerHTML = textstep3
+              var textstep5 = "Q.E.D"
+              document.getElementById('step5').innerHTML = textstep3
+    
+              var prooftext1 = "Proof: By definition of an increasing function."
+              document.getElementById('proof1').innerHTML = prooftext1
+              var prooftext2 = "Proof: By assumptions 1.1 and 1.2, the hypothesis that $f$ is differentiable on $I$ and the Mean Value Theorem."
+              document.getElementById('proof2').innerHTML = prooftext2
+              var prooftext3 = "Proof: By the hypothesis of the corollary and assumption 1.1."
+              document.getElementById('proof3').innerHTML = prooftext3
+              var prooftext4 = "Proof: By 2 and 3."
+              document.getElementById('proof4').innerHTML = prooftext4
+              var prooftext5 = "Proof: Assumption 1.2 implies $b-a > 0$, so 4 implies $f(b)-f(a) > 0,$ which implies $f(b)>f(a)$. By 1, this proves the corollary."
+              document.getElementById('proof5').innerHTML = prooftext5
+
+              var prooftext1_expanded = prooftext1 + " This cannot expanded more (deemed elementary)."
+              var prooftext2_expanded = "<ol><li><p>$f$ is differentiable on $[a,b]$.</p><p>Proof: By 1.1, since $f$ is differentiable on $I$ by hypothesis.</p></li><li><p>$f$ is continous on $[a,b]$.</p><p>Proof: By 2.1 and Theorem 1.</p></li><li><p>Q.E.D</p><p>Proof: By 2.1, 2.2 and the Mean Value Theorem.</p></li></ol>"
+              var prooftext3_expanded = prooftext3 + " This cannot expanded more (deemed elementary)."
+              var prooftext4_expanded = prooftext4 + " This cannot expanded more (deemed elementary)."
+              var prooftext5_expanded = "<ol><li><p>$b-a>0$</p><p>Proof: By 1.2</p></li><li><p>$f(b)-f(a)>0$</p><p>Proof: By 4 and 5.1.</p></li><li><p>Q.E.D</p><p>Proof: From 1 we know that 5.2 proves the statement.</p></li></ol>"
+    
+    
+              var clickproof1 = function(){
+                document.getElementById('prooftext1').innerHTML = prooftext1_expanded;
+                document.getElementById('proof1').innerHTML = '';
+                var math = document.getElementById("prooftext1"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickproof2 = function(){
+                document.getElementById('prooftext2').innerHTML = prooftext2_expanded;
+                document.getElementById('proof2').innerHTML = '';
+                var math = document.getElementById("prooftext2"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickproof3 = function(){
+                document.getElementById('prooftext3').innerHTML = prooftext3_expanded;
+                document.getElementById('proof3').innerHTML = '';
+                var math = document.getElementById("prooftext3"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickproof4 = function(){
+                document.getElementById('prooftext4').innerHTML = prooftext4_expanded;
+                document.getElementById('proof4').innerHTML = '';
+                var math = document.getElementById("prooftext4"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickproof5 = function(){
+                document.getElementById('prooftext5').innerHTML = prooftext5_expanded;
+                document.getElementById('proof5').innerHTML = '';
+                var math = document.getElementById("prooftext5"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickprooftext1 = function(){
+                document.getElementById('proof1').innerHTML = prooftext1;
+                document.getElementById('prooftext1').innerHTML = '';
+                var math = document.getElementById("proof1"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickprooftext2 = function(){
+                document.getElementById('proof2').innerHTML = prooftext2;
+                document.getElementById('prooftext2').innerHTML = '';
+                var math = document.getElementById("proof2"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickprooftext3 = function(){
+                document.getElementById('proof3').innerHTML = prooftext3;
+                document.getElementById('prooftext3').innerHTML = '';
+                var math = document.getElementById("proof3"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickprooftext4 = function(){
+                document.getElementById('proof4').innerHTML = prooftext4;
+                document.getElementById('prooftext4').innerHTML = '';
+                var math = document.getElementById("proof4"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+              var clickprooftext5 = function(){
+                document.getElementById('proof5').innerHTML = prooftext5;
+                document.getElementById('prooftext5').innerHTML = '';
+                var math = document.getElementById("proof5"); 
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+              }
+    
+              </script>
+      </ol>
   <h2>Multidimensional and hierarchical narratives</h2>
   
-  <p>Cairns, Gown and Collins<dt-cite key="cairns2003dynamically"></dt-cite> very nicely explain how there are essentially two parameters to tune when writing down math: [Animation mit Schiebereglern?] </p>
+  <p>Cairns, Gown and Collins<dt-cite key="cairns2003dynamically"></dt-cite> very nicely explain how there are essentially two parameters to tune when writing down math: [visualize with animation?] </p>
   <ul>
     <li>Amount of details in the proof: Lots of details mean that the main idea of the proof might get obscured by technicalities, too few details means the reader cannot properly understand it.</li>
     <li>Amount of contextual information<dt-fn>This means material outside the classical "lemma, theorem, proof, corollary" structure, i.e. examples, visualizations, explanations, hints at generalizations and applications etc.
@@ -130,7 +254,7 @@
       a beginner in order to form a better mental representation of the material presented.</li>
   </ul>
   <p>Setting those parameters means choosing an audience: There are few textbooks which are read by both undergraduate students and researchers and indeed, as Cairns, Gown and Collins point out: A given mathematical text 
-  may not even be appropriate for a single reader at different times (with the reader progressing in her mathematical abilities, she may want less and less details in the proofs in order to more quickly absorb essential information).
+  may not even be appropriate for a single reader at different times (with the reader progressing in her mathematical abilities, she may want to see less and less technicalities in the proofs and the general exposition in order to more quickly absorb essential information).
  </p>
 
   <p>Media based on paper necessarily fixes these parameters once and for all. The use of "starring" sections (i.e. marking them as advanced material) or relegating technical proofs in the appendix can alleviate the issue, but permanently 
@@ -169,18 +293,22 @@
     losing track of what he read and what he leapt over. As humans usually have a decent way of navigating themselves in two dimensions<dt-fn>we do not use three dimensions like birds do</dt-fn>, this seemingly
     confusing structure might actually lead to an improved orientational sense inside a document<dt-fn>The authors have often found themselves in a situation where they were looking for a specific definition, remark or proof
       which they had read earlier but couldn't remember where exactly it was located. This is not just unnecessary time loss but also breaks concentration.
-    </dt-fn>. 
+    </dt-fn>. [Definitely need a good sketch of a multidimensional document structure here, even better: A working demonstrator]
   </p>
   <!--<p>A second point to this is that no textbook and no article is read by a homogenous body of people but rather by experts and students, by someone just needing a specific definition or proof, or by someone who 
     is trying to autodidactically learn about a certain subject. No two reader will have identical prerequisites or goals and thus will need different levels of detail and explanation. We have seen this fact when we talked 
   about expandable proof structure but the gist of it applies to the structure of a whole document as well. </p>-->
   
-
+  
 
     
   
   <h2>Animation and visualization</h2>
-   <p>Mathematical intuition seems to be a contradiction in terms: Intuition is a quick and dirty answering tool shaped by our everday experience: When we show someone a video of a person throwing a ball and we stop the video a few seconds into the ball's trajectory, we will get a roughly correct answer for "Where will it land?". We have an intuition for where a ball thrown by hand will land approximately even without making the calculations. On the other hand, we don't have an intuition for the dynamics of a ball thrown with 90% speed of light because it lies outside of what we see every day [according to whatif, it is not good]. By definition, abstract mathematics lies outside of our immediate everyday experience. Nevertheless, when mathematicians work, one can often hear things like "Intuitively I think you're right, but how do we prove that? Maybe we should try ..., this feels like a good idea.". The choice of words here betray that the mathematician actually has some kind of intuition on this topic, not shaped by everyday experience but by hours and hours of study. </p>
+   <p>Mathematical intuition seems to be a contradiction in terms: Intuition is a quick and dirty answering tool shaped by our everday experience: When we show someone a video of a person throwing a ball and we stop the video a 
+     few seconds into the ball's trajectory, we will get a roughly correct answer for "Where will it land?". We have an intuition for where a ball thrown by hand will land approximately even without making the calculations. 
+     On the other hand, we don't have an intuition for the dynamics of a ball thrown with 90% speed of light because it lies outside of what we see every day [according to whatif, it is not good]. By definition, abstract mathematics 
+     lies outside of our immediate everyday experience. Nevertheless, when mathematicians work, one can often hear things like "Intuitively I think you're right, but how do we prove that? Maybe we should try ..., this feels like a good idea.". 
+     The choice of words here betray that the mathematician actually has some kind of intuition on this topic, not shaped by everyday experience but by hours and hours of study. </p>
    
    <p> In our mathematical experience, intuition comes with specific mental imagery: The simplex algorithm for linear optimization problems can be posed in the language of linear inequalities as a sequence of Gaussian elimination steps. It is a lot more revealing, though, to think of the Simplex algorithm as jumping from vertex to vertex, always improving on the value of the objective functional. Generally, there is often a "particularly good" way of thinking about a mathematical concept. In many cases, this "good way" is both most easily expressed and stored in memory when presented visually. In some cases this visual representation may or may not be present in the mathematical community but it is not effectively taught in courses and not explained in most textbooks. One example for this is the "bar plot" imagery for entropy (from information theory). Apart from [Chris Olah's blog post and MacKay's book, weiter recherchieren ob das wirklich selten ist, ja scheint so zu sein] we personally know no resources that explain entropy in this manner. [Further examples: 1-forms as surfaces that are pierced. Good example: MTW, bad example: most texts about differential forms] [The geometry of behaviour: Book only with visualizations] [internet and web technology allows creation and sharing of awesome 3d animations: Use that!]</p>
   <h2>Further topics: Gamification, Bret Victor, use of oral explanation (videos) ... </h2>
