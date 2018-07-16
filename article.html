@@ -21,22 +21,24 @@
   <h2>The impossible climb</h2>
   <p>The last true polymath is said to have been Gottfried Wilhelm Leibniz, with countless contributions to logic, philosophy, mathematics, engineering, psychology, physics, law and various other fields. 
     Few of us can say to have a similarly broad expertise; even more: Most researchers would label themselves not as mathematicians but as topologists, probabilists or computational scientists; not as physicists, 
-  but as experimental physicists or  string theorists etc. It is believed that this is not due to humanity becoming less intelligent but due to science becoming more and more specialised: If Leibniz's endeavours are likened
+  but as experimental physicists or  string theorists etc. <!--It is believed that this is not due to humanity becoming less intelligent but due to science becoming more and more specialised:--> Has 
+  mankind become more stupid? Arguable, but another factor is definitely more significant.</p>
+  <p> If Leibniz's endeavours are likened
   to climbing all mountains in the Austrian Alps (which is no mean feat but possible given sufficient fitness and perseverance), a modern scientist aspiring to be a true polymath faces a challenge similar to that of scaling every elevation higher than 500m on Earth as well as on any known celestial object in the solar system. 
   The large amount of knowledge humanity has accumulated so far has made it virtually impossible to be an expert in more than one discipline.</p>
   <p> This also affects students aspiring to become researchers themselves: The long climb to the peak of current research becomes longer and more tedious with every new proven result stacked on top of the mountain 
-    of science. Thought through, this means that -- given nothing changes -- there is a natural limit to research happening at a point where coming to speed with current research takes a whole lifetime. 
-    In this article, we will call a climb which takes longer than a standard lifetime, an <i>impossible climb.</i>
+    of science. Thought through, this means that -- given nothing changes -- there is a natural limit to research at a point where coming to speed with current research takes a whole lifetime. All higher peaks constitute 
+    <i>impossible climbs</i>.
  </p>
  <p> 
   There are two ways out of this dilemma. First, we can narrow down specializations even more <!--(creating researchers that don't study "stochastic partial differential equations (SPDEs)" 
   but "SPDEs on separable Hilbert spaces allowing for a Lyapunov function with a strictly non-positive generator" (or whatever super-specialized research might arise in this future scenario))-->
   such that there is less relevant material to be learned until novel research can be carried out. But this can only buy so much time and we suspect that there is an upper limit to specialization 
   that will still attract people to mathematical research. Also, a forest of disconnected ivory towers not being able to communicate with each other generates its own kind of problems: Techniques which are useful <i>for</i> various disciplines need to be developed
-  independently <i>by</i> each discipline and multidisciplinary projects will become even more rare. </p>
+   <i>by</i> each discipline separately and multidisciplinary projects will become even more rare. </p>
   <p>
-  The second idea is to speed up the learning process (in the spirit of Christopher Olah's article <dt-cite key="olah2017research"></dt-cite> this means constructing elevators to skip the climb). 
-  In this essay we want to collect and present a few ideas on how to achieve this goal with the aid of new media, adding a few thoughts of our own. 
+  A second way is to speed up the learning process <dt-fn>In the spirit of Christopher Olah's article <dt-cite key="olah2017research"></dt-cite> this means constructing elevators to skip the climb.</dt-fn>. 
+  In this essay I want to collect and present a few ideas on how to achieve this goal with the aid of new media, adding a few thoughts. 
   While a lot of these ideas have been present for some time, with the development of newer and more flexible web technologies, they are now more easily implemented than ten years ago. 
   We will talk about the following topics. [Update!]</p>
   <ul>
@@ -45,7 +47,7 @@
   <li>Hierarchical and multidimensional narratives</li>
   <li>Visualization and animation</li>
   </ul>
-  <p>We will then discuss some hurdles to the implementation of these measures and conclude with an incomplete list of "best practices".</p>
+  <p>We will then discuss some hurdles to the implementation of these measures.</p>
   
   
   <!-- <h2>Scope of the article
@@ -75,9 +77,7 @@
         <li><b>Execute</b> the proof in detail<dt-fn>Steps 2 and 3 may be realized by the hierarchical structure described below</dt-fn></li>
         <li><b>Reflect</b> on the theorem's use in subsequent theory or in applications, on its versions in more general settings, or on variants of the proof.</li>
     </ol> 
-    <p>I believe that this four step system as presented in <dt-cite key="cairns2003dynamically"></dt-cite> is a helpful guiding concept to keep in mind for the rest of the article. 
-      Reflecting on these principles, I have found that almost all "excellent"<dt-fn>by this I mean exceptionally instructive and well-written (in my opinion)</dt-fn> textbooks or papers 
-      roughly follow this pattern.      </p>
+    
       <p> A prime example for this is "An introduction to the Conjugated Gradient Method without the agonizing pain" by Jonathan Shewchuk <dt-cite key=shewchuk2007conjugate></dt-cite>. This is its abstract:</p>
       <p><i>The Conjugate Gradient Method is the most prominent iterative method for solving sparse systems of linear equations.
           Unfortunately, many textbook treatments of the topic are written with neither illustrations nor intuition, and their
@@ -87,7 +87,15 @@
           that almost anyone can understand. Of course, a reader as intelligent as yourself will learn them almost effortlessly.</i></p><p><i>
           [...] I have taken pains to make this article easy to read. Sixty-six illustrations are provided. Dense prose is
           avoided. Concepts are explained in several different ways. Most equations are coupled with an intuitive interpretation. <dt-cite key=shewchuk2007conjugate></dt-cite></i></p>
-    <p> We continue with discussing a didactical concept proposed by Leslie Lamport, the developer of LaTeX.</p>
+        <p>The article keeps its promise and it truly avoids any agonizing pain, relying on building geometrical intuition to introduce the 
+          concept of conjugated gradients while basically following Polya's four steps: The author first <b>builds intuition</b> why the naive gradient descent is suboptimal and then <b>sketches</b> the basic idea of conjugated gradients. 
+          He proceeds by <b>executing</b> the derivation of the algorithm (still for quadratic forms) and <b>reflects</b> on its version in the setting of nonlinear optimization.<dt-fn>Of course, the article is a lot richer than what this four-step corset requires.</dt-fn>  
+          It should be noted that the article also has to be mentioned in the section about visualization and animation as its didactical magnificence notably lies in its lavish use of truly revealing figures.
+        </p>
+        <p>I believe that this four step system as presented in <dt-cite key="cairns2003dynamically"></dt-cite> is a helpful guiding concept to keep in mind for the rest of the article. 
+          Reflecting on these principles, I have found that almost all "excellent"<dt-fn>by this I mean exceptionally instructive and well-written (in my opinion)</dt-fn> textbooks or papers 
+          roughly follow this pattern.      </p>
+    <!--<p> We continue with discussing a didactical concept proposed by Leslie Lamport, the developer of LaTeX.</p>-->
 
   <h2>Hierarchical proof structure</h2> 
 
@@ -106,7 +114,7 @@
     </div>
   </figure>
 
-  <p>The expanded version (on the right hand side) clearly marks all the "ins and outs" in every step of the proof. Now some reader may struggle with step 2: The application of the Mean Value Theorem
+  <p>Lamport's expanded version (on the right hand side) clearly marks all the "ins and outs" in every step of the proof. Now some reader may struggle with step 2: The application of the Mean Value Theorem
     requires a function to be continous but he only sees a differentiable function. This means we need a sub-proof for the fact every differentiable function is continous. At this point we can either refer to a lemma 
     which might have proven this fact before or we can follow Lamport's suggestion to insert a sub-proof.
   </p>
@@ -114,6 +122,7 @@
         <img src="proof_substep.png" width="514"/>
         <figcaption>Subproof of step 2, from Lamport<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
   </figure>
+  <!--<p>He compares this way of writing down a proof to that of explaining something to a very curious child who always asks, "but why?". </p>-->
   <p>A hierarchical proof can be implemented in at least three ways. 
     <ul>
       <li>Hierarchical structure by indentation: All substeps are shown always and are structured by various degrees of indentation. This is the only viable method for print but has the draw-back of never hiding 
@@ -341,12 +350,13 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
   <p>Media based on paper necessarily fixes these parameters once and for all. The use of "starring" sections (i.e. marking them as advanced material) or relegating technical proofs in the appendix can alleviate the issue, but permanently 
       skipping sections makes for a tiresome and disorienting read.  </p>
 
-  <p>With modern web technologies, we see essentially two possibilities in order to tackle this problem. The first possiblity is to apply the idea of hierarchicalization<dt-fn>as discussed for proof structures above</dt-fn>
+  <p>With modern web technologies, there are at least two possibilities in order to tackle this problem. First, we can apply the idea of hierarchicalization<dt-fn>as discussed for proof structures above</dt-fn>
         and make whole sections of contextual information appear and disappear on the reader's whim. This might work nicely but there is another problem with conventional media:</p>
 
-  <p>Textbooks and scientific articles are usually written in a linear, contiguous manner. Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader. The reader can stray from the path,
-      jump over sections and ignore proofs which he deems to tedious to follow for the moment, but he is still forced to navigate his way through what is essentially a very long scroll of papyrus. If he needs to re-read a previous
-      paragraph or find a definition, he needs to scroll back until he finds the passage. It is hard to navigate in one dimension because one has to remember the exact order of the items along it. There is another option, though.
+  <p>Textbooks and scientific articles are usually written in a linear, contiguous manner. Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader.
+     The reader can stray from the path, jump over sections and ignore proofs which she deems to tedious to follow for the moment, but she is still forced to navigate her way through what is essentially 
+     a very long scroll of papyrus. If she needs to re-read a previous paragraph or find a definition, she needs to scroll back until she finds the passage. It is hard to navigate in one dimension because 
+     one has to remember the exact order of the items along it. There is another option, though.
     </p>
     
     
@@ -356,7 +366,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
  <p>We talked about people loving to play and explore and so it makes sense to 
   try and introduce "explorative fun" any time when teaching mathematics (be it lecturing undergrads or writing a research paper).</p>
   <p>There is a caveat to this: Given too much explorative freedom, anyone will be overwhelmed by the amount of choices <dt-fn>You can't just give a high school student a licence of Matlab and tell him to "do numerics" with it.</dt-fn>. Also, 
-    a teacher (or the write of a textbook) supposedly has a learning goal for his audience in mind which he tries to lead the student (or reader) towards to.
+    a teacher (or the author of a textbook) supposedly has a learning goal for his audience in mind which he tries to lead the student (or reader) towards to.
     There is a sweet spot (which may be individually different) between the yoke of a very rigid textbook and unhelpful total freedom. We think that an instructive teaching medium has struck the balance if it 
     takes the reader by the hand, gently leads him towards helpful ideas, warns him of common misunderstandings but then takes a step back and waits for him to choose the directions in which he wants to proceed: 
     More rigor, more exercise, more details or more intuition <dt-fn>Note that those categories are by no means mutually exclusive in the long term, but for someone starting to learn about a specific field they may be at first.</dt-fn>.
@@ -366,8 +376,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
     a tree-like structure, with a stem covering the main story with branches diverting to "building intuition", "generalization to metric spaces", "more examples and counterexamples", "applications to physics" etc. 
     Most readers will find some of those branches, but not all of them, interesting. By presenting the material in this form, the reader does not need to skip a large number of pages, 
     losing track of what he read and what he leapt over. As humans usually have a decent way of navigating themselves in two dimensions<dt-fn>we do not use three dimensions like birds do</dt-fn>, this seemingly
-    confusing structure might actually lead to an improved orientational sense inside a document<dt-fn>The authors have often found themselves in a situation where they were looking for a specific definition, remark or proof
-      which they had read earlier but couldn't remember where exactly it was located. This is not just unnecessary time loss but also breaks concentration.
+    confusing structure might actually lead to an improved orientational sense inside a document<dt-fn>I have often found myself in a situation where I was looking for a specific definition, remark or proof
+      which I had read earlier but couldn't remember where exactly it was located. This is not just unnecessary time loss but also breaks concentration.
     </dt-fn>. [Definitely need a good sketch of a multidimensional document structure here, even better: A working demonstrator]
   </p>
   <p>
@@ -379,8 +389,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
       <figcaption>The chapter dependency structure of <dt-cite key=shewchuk2007conjugate></dt-cite> </figcaption>
   </figure>
   <p>
-    We ask the reader to recall how many textbooks he has actually read from cover to cover (we suspect that this constitutes a small fraction of all books he has read). Most readers will want to look for a specific 
-    "substory" of a given textbook (or an article). Let's take a typical linear algebra textbook. Here are a few plausible reader types and their intention for reading the book:
+    You may try to recall how many textbooks he has actually read from cover to cover (we suspect that this constitutes a small fraction of all books you have read). Most readers look for a specific 
+    "substory" of a given textbook (or an article). Let's take a typical linear algebra textbook. Here are a few plausible reader types and their intention for reading it:
     <ul>
       <li>Undergraduate student taking a linear algebra course: She needs to be able to solve linear equations by next week because exams are approaching fast.</li>
       <li>Graduate student: He is currently struggling with functional analysis, has heard that it actually is just "infinite-dimensional linear algebra" and wants to brush up on some basics that he forgot. </li>
