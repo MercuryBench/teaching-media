@@ -15,9 +15,9 @@
 </script>
 <dt-article>
   <h1>Reducing research debt </h1>
-  <h2>A few ideas on the use of web technology to present distilled research (and become a better teacher in mathematics<dt-fn>This article is written from the perspective of a mathematician, but it should be easily translated into physics, computer science and related fields.</dt-fn>)</h2>
+  <h2>A few ideas on the use of web technology to present <a href="https://distill.pub/2017/research-debt/">distilled research</a> (and become a better teacher in mathematics<dt-fn>This article is written from the perspective of a mathematician, but it should be easily translated into physics, computer science and related fields.</dt-fn>)</h2>
   <dt-byline></dt-byline>
-
+  <p>This article should be read as a collection of ideas for reducing research debt in the sense of Chris Olah's and Shan Carter's article <dt-cite key="olah2017research"></dt-cite> (which, in case you have not read, I warmly recommend you do before reading further).</p>
   <h2>The impossible climb</h2>
   <p>The last true polymath is said to have been Gottfried Wilhelm Leibniz, with countless contributions to logic, philosophy, mathematics, engineering, psychology, physics, law and various other fields. 
     Few of us can say to have a similarly broad expertise; even more: Most researchers would label themselves not as mathematicians but as topologists, probabilists or computational scientists; not as physicists, 
@@ -25,29 +25,30 @@
   mankind become more stupid? Arguable, but another factor is definitely more significant.</p>
   <p> If Leibniz's endeavours are likened
   to climbing all mountains in the Austrian Alps (which is no mean feat but possible given sufficient fitness and perseverance), a modern scientist aspiring to be a true polymath faces a challenge similar to that of scaling every elevation higher than 500m on Earth as well as on any known celestial object in the solar system. 
-  The large amount of knowledge humanity has accumulated so far has made it virtually impossible to be an expert in more than one discipline.</p>
+  The large amount of knowledge that humanity has accumulated so far has made it virtually impossible to be an expert in more than one discipline.</p>
   <p> This also affects students aspiring to become researchers themselves: The long climb to the peak of current research becomes longer and more tedious with every new proven result stacked on top of the mountain 
     of science. Thought through, this means that -- given nothing changes -- there is a natural limit to research at a point where coming to speed with current research takes a whole lifetime. All higher peaks constitute 
-    <i>impossible climbs</i>.
+    <i>impossible climbs</i> (and impossible scientific breakthroughs).
  </p>
  <p> 
   There are two ways out of this dilemma. First, we can narrow down specializations even more <!--(creating researchers that don't study "stochastic partial differential equations (SPDEs)" 
   but "SPDEs on separable Hilbert spaces allowing for a Lyapunov function with a strictly non-positive generator" (or whatever super-specialized research might arise in this future scenario))-->
-  such that there is less relevant material to be learned until novel research can be carried out. But this can only buy so much time and we suspect that there is an upper limit to specialization 
-  that will still attract people to mathematical research. Also, a forest of disconnected ivory towers not being able to communicate with each other generates its own kind of problems: Techniques which are useful <i>for</i> various disciplines need to be developed
-   <i>by</i> each discipline separately and multidisciplinary projects will become even more rare. </p>
+  such that there is less relevant material to be learned until novel research can be carried out. But this can only buy so much time and it seems plausible that there is an upper limit to specialization 
+  that will still attract people to scientific research. Also, a forest of disconnected ivory towers not being able to communicate with each other generates its own kind of problems: Techniques which are useful <i>for</i> various disciplines need to be developed
+   <i>by</i> each discipline separately and multidisciplinary projects will become even more rare. <dt-fn>It can be argued that general relativity could only be formulated by people who grasped both
+     the physics and the necessary differential geometry.
+   </dt-fn></p>
   <p>
   A second way is to speed up the learning process <dt-fn>In the spirit of Christopher Olah's article <dt-cite key="olah2017research"></dt-cite> this means constructing elevators to skip the climb.</dt-fn>. 
-  In this essay I want to collect and present a few ideas on how to achieve this goal with the aid of new media, adding a few thoughts. 
+  In this essay I want to collect and present a few ideas on how to achieve this goal with the aid of new<dt-fn>in the sense of "newer than books"</dt-fn> media. 
   While a lot of these ideas have been present for some time, with the development of newer and more flexible web technologies, they are now more easily implemented than ten years ago. 
   We will talk about the following topics. [Update!]</p>
   <ul>
   <li>Polya's four steps as a general guideline for mathematical teaching</li>
-  <li>Leslie Lamport's hierarchical proof structure</li>
+  <li>Leslie Lamport's idea of hierarchical proof structures</li>
+  <li>Visualization, animation, and "Explorables"</li>
   <li>Hierarchical and multidimensional narratives</li>
-  <li>Visualization and animation</li>
   </ul>
-  <p>We will then discuss some hurdles to the implementation of these measures.</p>
   
   
   <!-- <h2>Scope of the article
@@ -56,7 +57,7 @@
 
   
   <h2>Polya's four steps</h2>
-  <p>Cairns, Gown and Collins <dt-cite key="cairns2003dynamically"></dt-cite> present Polya's four steps to solving a problem.
+  <p>Cairns, Gown and Collins <dt-cite key="cairns2003dynamically"></dt-cite> present Polya's four steps to solving a problem in the following way.
         <h3>Polya's four steps for solving problems</h3>
     <ol>
       <li><b>Understand</b> the problem with examples, diagrams and a careful examination of each of the terms and unknowns in the problem.</li>
@@ -66,7 +67,7 @@
     </ol>
     <!--<figcaption>Polya's four steps for solving problems</figcaption>-->
     <p>The authors argue that this method for problem solving can be applied verbatim to learning mathematics; and a teacher of mathematics (or someone writing a textbook or a scientific article) should present her material in a 
-        way such that the reader will (maybe inadvertently) follow these four steps. </p>
+        way such that the reader will (maybe unknowingly) follow these four steps. </p>
     <p> Translated into the language of teaching mathematics, these four steps can be reformulated.</p>
     
     
@@ -161,27 +162,34 @@
 src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
     <h2 id="header">Interactive hierarchical proof structure</h1>
-      <p>It follows a demonstration of how an interactive hierarchical structure could work on a webpage<dt-fn>Please do not look at the source code of this example.</dt-fn>. For example, click on the proof of step 2 to expand and click again on 
-      the expanded proof to collapse.</p> 
+      <p>It follows a demonstration of how an interactive hierarchical structure could work on a webpage<dt-fn>Please do not look at the source code of this example.</dt-fn>. Click on grey paragraphs to expand and collapse content.</p> 
      <p>Corollary: If $f'(x)>0$ for all $x$ in an interval $I$, then $f$ is increasing on $I$.</p>
      <p>Proof:</p>
+     <style>
+     p.proof {
+       background-color: lightgray
+     }
+     p.proofext{
+       background-color: lightslategray
+     }
+       </style>
       <ol>
           
           <li><p id=step1></p>
-          <p id="proof1" onclick=clickproof1()></p>
-          <p id="prooftext1" onclick=clickprooftext1()></p></li>
+          <p id="proof1" class="proof" onclick=clickproof1()></p>
+          <p id="prooftext1" class="proofext" onclick=clickprooftext1() ></p></li>
           <li><p id=step2></p>
-          <p id="proof2" onclick=clickproof2()></p>
-          <p id="prooftext2" onclick=clickprooftext2()></p></li>
+          <p id="proof2" class="proof" onclick=clickproof2()></p>
+          <p id="prooftext2" class="proofext" onclick=clickprooftext2()></p></li>
           <li><p id=step3></p>
-          <p id="proof3" onclick=clickproof3()>Proof</p>
-          <p id="prooftext3" onclick=clickprooftext3()></p></li>
+          <p id="proof3" class="proof" onclick=clickproof3()>Proof</p>
+          <p id="prooftext3" class="proofext" onclick=clickprooftext3()></p></li>
           <li><p id=step4></p>
-          <p id="proof4" onclick=clickproof4()>Proof</p>
-          <p id="prooftext4" onclick=clickprooftext4()></p></li>
+          <p id="proof4" class="proof" onclick=clickproof4()>Proof</p>
+          <p id="prooftext4" class="proofext" onclick=clickprooftext4()></p></li>
           <li><p id=step5></p>
-          <p id="proof5" onclick=clickproof5()>Proof</p>
-          <p id="prooftext5" onclick=clickprooftext5()></p></li>
+          <p id="proof5" class="proof" onclick=clickproof5()>Proof</p>
+          <p id="prooftext5" class="proofext" onclick=clickprooftext5()></p></li>
           <script>
               var textstep1 = "It suffices to assume <ol><li>$a$ and $b$ are points in $I$</li><li>$a&lt;b$</li></ol> and prove $f(b) &gt; f(a)$."
               document.getElementById('step1').innerHTML = textstep1
@@ -189,10 +197,10 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
               document.getElementById('step2').innerHTML = textstep2
               var textstep3 = "$f'(x)>0$ for all $x$ in $(a,b)$"
               document.getElementById('step3').innerHTML = textstep3
-              var textstep4 = "$\frac{f(b)-f(a)}{b-a} > 0$"
-              document.getElementById('step4').innerHTML = textstep3
+              var textstep4 = "$\\frac{f(b)-f(a)}{b-a} > 0$"
+              document.getElementById('step4').innerHTML = textstep4
               var textstep5 = "Q.E.D"
-              document.getElementById('step5').innerHTML = textstep3
+              document.getElementById('step5').innerHTML = textstep5
     
               var prooftext1 = "Proof: By definition of an increasing function."
               document.getElementById('proof1').innerHTML = prooftext1
@@ -206,7 +214,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
               document.getElementById('proof5').innerHTML = prooftext5
 
               var prooftext1_expanded = prooftext1 + " This cannot expanded more (deemed elementary)."
-              var prooftext2_expanded = "<ol><li><p>$f$ is differentiable on $[a,b]$.</p><p>Proof: By 1.1, since $f$ is differentiable on $I$ by hypothesis.</p></li><li><p>$f$ is continous on $[a,b]$.</p><p>Proof: By 2.1 and Theorem 1.</p></li><li><p>Q.E.D</p><p>Proof: By 2.1, 2.2 and the Mean Value Theorem.</p></li></ol>"
+              var prooftext2_expanded = "<ol><li><p>$f$ is differentiable on $[a,b]$.</p><p>Proof: By 1.1, since $f$ is differentiable on $I$ by hypothesis.</p></li><li><p>$f$ is continous on $[a,b]$.</p><p>Proof: By 2.1 and Theorem 1.</p></li><li><p>Q.E.D</p><p>Proof: By 2.2 and the Mean Value Theorem.</p></li></ol>"
               var prooftext3_expanded = prooftext3 + " This cannot expanded more (deemed elementary)."
               var prooftext4_expanded = prooftext4 + " This cannot expanded more (deemed elementary)."
               var prooftext5_expanded = "<ol><li><p>$b-a>0$</p><p>Proof: By 1.2</p></li><li><p>$f(b)-f(a)>0$</p><p>Proof: By 4 and 5.1.</p></li><li><p>Q.E.D</p><p>Proof: From 1 we know that 5.2 proves the statement.</p></li></ol>"
@@ -286,150 +294,23 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
       </p>-->
   
 
-  <h2>Gamification</h2>
-  <p>Humans have a deep-rooted passion for playing and exploring, with Friedrich Schiller going as far as to say "Man only plays when in the full meaning of the word he is a man, and he is only completely a man when he plays.". 
-    Many mathematical discoveries (as happened with breakthroughs in physics and engineering) only arose from someone thinking "what happens if I change this bit?". People love to tinker and to fiddle; and to observe the environment's reaction.
-    Furthermore, fun leads to passion, passion gives persistence and motivation, which in turn is necessary for the hard work needed in order to achieve anything meaningful. 
-  </p>
-  <p>Another facet of the power of playing is that it helps acquiring familiarity and intuition. Why? To understand this we need to think about what playing really is: Children play in order to see how things work. When they
-    knock over a tower of bricks they do not mean to be destructive, they are trying to understand statics and gravity. No parent would try to teach their toddler Newton's laws of motion, because playing is an incredible
-    shortcut to a kind of understanding which may not be exact, but approximately correct and intuitive<dt-fn>By this we mean that a child may not be able to calculate the exact point of impact of a thrown ball, but it will 
-      intuitively predict a roughly correct area in which it will land. </dt-fn>. Later, when the child learns about mechanics in school, its experience will help him <i>internalize</i> the analytical method of predicting. 
-  </p>
-  <p>While the importance of playing for children and their development has been widely acknowledged, there seems to be a growing body of literature suggesting that adults can benefit a lot from playing, too. 
-    I am no expert in psychology and so we will not get into that but just state an unproven proposition: Playing helps people to gain informal and intuitive familiarity with some object or 
-    system which can help them when they are thinking about it in an analytical way. This in turn improves intuition. I think about this feedback system in the following way.
-  </p>
-  <figure class="l-body">
-      <img src="intuition_knowledge.png"/>
-      <figcaption>Intuition-Knowledge feedback cycle [fix scaling!]</figcaption>
-</figure>
-<p>In some sense it could be argued that "traditional" ways of presenting mathematics work by entering this feedback cycle from below (starting with knowledge), by confronting the reader with 
-  enormous amounts of knowledge (definition, definition, definition, lemma, lemma, definition, theorem,...). Only the fittest survive this and emerge -- with an intuition they formed as a by-product<dt-fn>but 
-  which they may not be able to communicate effectively: They were not introduced into the topic by the use of intuition so the have not learned how to communicate their own intuition</dt-fn>. What I want to
-  propose here is <i>entering the feedback loop from above</i> (i.e. by building some intuition early on). We'll see how this can be done.
-</p>
-<h3>Entering the feedback loop from above</h3>
-  <p>Let's talk about the game "A slower speed of light" (By the MIT Game Lab). The game objective is very simple: Pick up 100 orbs by walking around in a slightly Kafkaesque landscape. Every orb you pick up reduces your environment's 
-    speed of light by a small amount (while your own maximum speed is unchanges), until your own speed reaches the speed of light with the 100th orb. By doing that, you can experience step by step relativistic effects: The doppler effect changes the colors of objects,
-   the searchlight effect brightens objects which lie ahead of you and the whole scenery gets warped by space and time dilation.  </p>
-   
-  <figure class="l-body">
-      <img src="assol1.png"/>
-      <figcaption>Gameplay from "A slower speed of light"<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
-</figure>
-   <p>By playing "A slower speed of light" you can get familiarity and almost "real life experience" with something which is classically beyond the reach of our senses. After some time you intuitively know in which direction 
-     the giant mushrooms in the landscape will (seem to) bend when you whizz past them with 90% speed of light. When you later calculate length dilation with pencil and paper there is a good chance you will be able to 
-    match the outcome with your newly acquired relativistic intuition and say "Yep, this sounds about right".</p>
-
-    <p>Or take the short browser game "District"<dt-fn>The author is part of a community making <a href=https://explorabl.es/>"Explorable Explanations" </a>(which they prefer to the term "gamification" which we adopt nevertheless because it is shorter and more well-known).</dt-fn>. It teaches you how how to edit voting districts in order to secure your candidate's victory even if the majority of voters is not voting for him. This teaches 
-      the basics of gerrymandering better (and quicker) than reading an article about it could.</p>
-      <figure class="l-body">
-          <img src="district.png"/>
-          <figcaption>Gameplay from "A slower speed of light"<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
-    </figure>
+  <h2>Visualization, animations and "Explorables"</h2>
  
-  <!--<p>A second point to this is that no textbook and no article is read by a homogenous body of people but rather by experts and students, by someone just needing a specific definition or proof, or by someone who 
-    is trying to autodidactically learn about a certain subject. No two reader will have identical prerequisites or goals and thus will need different levels of detail and explanation. We have seen this fact when we talked 
-  about expandable proof structure but the gist of it applies to the structure of a whole document as well. </p>-->
-  <p>There is a whole community ("data vis") out there <a href=https://bost.ocks.org/mike/>doing</a> <a href=https://explorabl.es/>wonders</a> with interactive data presentation and even some great
-    <a href=http://immersivemath.com/ila/index.html>mathematical</a> <a href=https://jackschaedler.github.io/circles-sines-signals/>explanations</a>. I strongly believe, though, that there can be a lot more
-    collaboration between researchers and data vis wizards, leading to graphical explanations of even more challenging topics.
-  </p>
-  <h2>Multidimensional and hierarchical narratives</h2>
-  
-  <p>Cairns, Gown and Collins<dt-cite key="cairns2003dynamically"></dt-cite> very nicely explain how there are essentially two parameters to tune when writing down math: [visualize with animation?] </p>
-  <ul>
-    <li>Amount of details in the proof: Lots of details mean that the main idea of the proof might get obscured by technicalities, too few details means the reader cannot properly understand it.</li>
-    <li>Amount of contextual information<dt-fn>This means material outside the classical "lemma, theorem, proof, corollary" structure, i.e. examples, visualizations, explanations, hints at generalizations and applications etc.
 
-    </dt-fn>. This kind of "bonus material" is essentially irrelevant for the logical argument (and tiresome for an expert in the field just trying to find the main contribution of the text) but is necessary for 
-      a beginner in order to form a better mental representation of the material presented.</li>
-  </ul>
-  <p>Setting those parameters means choosing an audience: There are few textbooks which are read by both undergraduate students and researchers and indeed, as Cairns, Gown and Collins point out: A given mathematical text 
-  may not even be appropriate for a single reader at different times (with the reader progressing in her mathematical abilities, she may want to see less and less technicalities in the proofs and the general exposition in order to more quickly absorb essential information).
- </p>
-
-  <p>Media based on paper necessarily fixes these parameters once and for all. The use of "starring" sections (i.e. marking them as advanced material) or relegating technical proofs in the appendix can alleviate the issue, but permanently 
-      skipping sections makes for a tiresome and disorienting read.  </p>
-
-  <p>With modern web technologies, there are at least two possibilities in order to tackle this problem. First, we can apply the idea of hierarchicalization<dt-fn>as discussed for proof structures above</dt-fn>
-        and make whole sections of contextual information appear and disappear on the reader's whim. This might work nicely but there is another problem with conventional media:</p>
-
-  <p>Textbooks and scientific articles are usually written in a linear, contiguous manner. Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader.
-     The reader can stray from the path, jump over sections and ignore proofs which she deems to tedious to follow for the moment, but she is still forced to navigate her way through what is essentially 
-     a very long scroll of papyrus. If she needs to re-read a previous paragraph or find a definition, she needs to scroll back until she finds the passage. It is hard to navigate in one dimension because 
-     one has to remember the exact order of the items along it. There is another option, though.
-    </p>
-    
-    
-    <h3>Adding dimensionality</h3>
-
-
- <p>We talked about people loving to play and explore and so it makes sense to 
-  try and introduce "explorative fun" any time when teaching mathematics (be it lecturing undergrads or writing a research paper).</p>
-  <p>There is a caveat to this: Given too much explorative freedom, anyone will be overwhelmed by the amount of choices <dt-fn>You can't just give a high school student a licence of Matlab and tell him to "do numerics" with it.</dt-fn>. Also, 
-    a teacher (or the author of a textbook) supposedly has a learning goal for his audience in mind which he tries to lead the student (or reader) towards to.
-    There is a sweet spot (which may be individually different) between the yoke of a very rigid textbook and unhelpful total freedom. We think that an instructive teaching medium has struck the balance if it 
-    takes the reader by the hand, gently leads him towards helpful ideas, warns him of common misunderstandings but then takes a step back and waits for him to choose the directions in which he wants to proceed: 
-    More rigor, more exercise, more details or more intuition <dt-fn>Note that those categories are by no means mutually exclusive in the long term, but for someone starting to learn about a specific field they may be at first.</dt-fn>.
-  </p>
-  <p>Instead of just hiding and expanding sections which seem interesting to the reader, it would make for an immersive experience if she could actually "go in different directions", not only figuratively (while still being 
-    constrained to the one-dimensionality of the document), but literally: If a classical document (even with dynamically expanding and collapsing sections) is still a continuous scroll (albeit variable in length), we hereby mean navigating 
-    a tree-like structure, with a stem covering the main story with branches diverting to "building intuition", "generalization to metric spaces", "more examples and counterexamples", "applications to physics" etc. 
-    Most readers will find some of those branches, but not all of them, interesting. By presenting the material in this form, the reader does not need to skip a large number of pages, 
-    losing track of what he read and what he leapt over. As humans usually have a decent way of navigating themselves in two dimensions<dt-fn>we do not use three dimensions like birds do</dt-fn>, this seemingly
-    confusing structure might actually lead to an improved orientational sense inside a document<dt-fn>I have often found myself in a situation where I was looking for a specific definition, remark or proof
-      which I had read earlier but couldn't remember where exactly it was located. This is not just unnecessary time loss but also breaks concentration.
-    </dt-fn>. [Definitely need a good sketch of a multidimensional document structure here, even better: A working demonstrator]
-  </p>
-  <p>
-    A second reason for "writing a tree" (instead of a scroll) is that dependencies often form a tree structure, see fig. ???. Sometimes the reader has a specific goal in mind, i.e. a chapter, algorithm or theorem she wants to
-    understand. If the document is written tree-like, she can follow the sequence of branches leading to her goal very easily and more intuitively.
-  </p>
-  <figure>      
-      <img src="dependency.png"/>
-      <figcaption>The chapter dependency structure of <dt-cite key=shewchuk2007conjugate></dt-cite> </figcaption>
-  </figure>
-  <p>
-    You may try to recall how many textbooks he has actually read from cover to cover (we suspect that this constitutes a small fraction of all books you have read). Most readers look for a specific 
-    "substory" of a given textbook (or an article). Let's take a typical linear algebra textbook. Here are a few plausible reader types and their intention for reading it:
-    <ul>
-      <li>Undergraduate student taking a linear algebra course: She needs to be able to solve linear equations by next week because exams are approaching fast.</li>
-      <li>Graduate student: He is currently struggling with functional analysis, has heard that it actually is just "infinite-dimensional linear algebra" and wants to brush up on some basics that he forgot. </li>
-      <li>PhD student working in Computer Vision: She is looking for some techniques for working with rotations, translations and general transformations in 3D in order to accelerate her code.</li>
-      <li>An assistant professor lecturing linear algebra for the first time: He is currently skimming multiple resources in order to find a particularly nice proof for the Jordan normal form.</li>
-      <li>A tenured professor writing her own book about linear algebra: She remembers that a specific notion was exceptionally well-explained in this book and wants to adopt this concept in her own writing.</li>
-    </ul>
-    <p>All those readers superficially need different textbooks because every one of them needs to ignore large portions of the whole text (which is very tiring). It could even be hypothesised that there is such a 
-    large (and growing) number of books on almost any topic because there are typically a lot of different reader types and few books manage to appeal to all of them, because it is exhausting to read a book like this:</p>
-    <figure>      
-        <img src="read_book.png"/>
-        <figcaption>A specific reader might read just small, scattered parts (in red) of a book. [fix scaling!]</figcaption>
-    </figure>
-    <p>A dynamical content textbook where the reader can collapse and expand sections might help bringing those red batches closer together, but a tree-like structure might be more intuitive.</p>
-    <p><figure>      
-        <img src="tree.png" width=10%/>
-        <figcaption>When navigating a "book tree", the reader has a clearer structure of what he is reading and what he is skipping. [fix scaling!]</figcaption>
-    </figure></p>
-  </p>
-
-    
-  
-  <h2>Visual explanations and animations </h2>
+<!--<h2>Visual explanations and animations </h2>-->
    <p>Mathematical intuition seems to be a contradiction in terms: Intuition is a quick and dirty answering tool shaped by our everday experience: When we show someone a video of a person throwing a ball and we stop the video a 
      few seconds into the ball's trajectory, we will get a roughly correct answer for "Where will it land?". We have an intuition for where a ball thrown by hand will land approximately even without making the calculations. 
-     On the other hand, we don't have an intuition for the dynamics of a ball thrown with 90% speed of light because it lies outside of what we see every day [according to whatif, it is not good]. By definition, abstract mathematics 
+     On the other hand, we don't have an intuition for the dynamics of a ball thrown with 90% speed of light because it lies outside of what we see every day <dt-fn>According to <a href="https://what-if.xkcd.com/1/">what-if</a>, we're lucky in that regard.</dt-fn>. By definition, abstract mathematics 
      lies outside of our immediate everyday experience. Nevertheless, when mathematicians work, one can often hear things like "Intuitively I think you're right, but how do we prove that? Maybe we should try ..., this feels like a good idea.". 
-     The choice of words here betray that the mathematician actually has some kind of intuition on this topic, not shaped by everyday experience but by hours and hours of study. </p>
+     The choice of words here betray that the mathematician actually has some kind of intuition on this topic, not shaped by everyday experience but by hours and hours of "working" with mathematical objects. </p>
      <h3>Visual explanations</h3>
    
-   <p> In our mathematical experience, intuition comes with specific mental imagery: The simplex algorithm for linear optimization problems can be posed in the language of linear 
-     inequalities as a sequence of Gaussian elimination steps. It is a lot more revealing, though, to think of the simplex algorithm as jumping from vertex to vertex, always improving 
+   <p> In my experience from mathematics, intuition comes with specific mental imagery: The simplex algorithm for linear optimization problems can be posed in the language of linear 
+     inequalities as a sequence of Gaussian elimination steps. It is a lot more revealing, though, to think of the simplex algorithm geometrically as jumping from vertex to vertex in the polytope of feasibility, always improving 
      on the value of the objective functional.</p>
 
      <p> Even if there is no actual geometric picture for a specific mathematical concept, there is often a "particularly good" visual way of thinking about it. In many cases, this "good way" is both most 
-     easily expressed and stored in memory when presented visually. In some cases this visual representation may or may not be present in the mathematical community but it is not effectively 
+     easily expressed and stored in memory when presented visually. This visual representation may or may not be present in the mathematical community but in some cases is not effectively 
      taught in courses and not explained in most textbooks.</p>
      <p> One example for this is conditional entropy and mutual information (from information theory). Most textbooks (and Wikipedia) provide with its definition a visual aide in the form of a Venn diagram (see fig. ???). But there
        is another way by using a specific bar plot (see fig. ???).  <dt-cite key=mackay2003information>MacKay (Exercise 8.8)</dt-cite> argues that the former version is very misleading and the latter picture is much more accurate.
@@ -463,8 +344,142 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
         <i>Neural networks and deep learning</i><dt-cite key=nielsen2015neural></dt-cite>. It teaches the basics of neural networks, i.e. what neurons are, how backpropagation allows neural networks to learn,
        it gives a visual proof on why neural networks are universal emulators and how "deep" neural networks work. Interspersed throughout the text (which does not shy away from proofs which might lead to a better understanding)
        there are wonderful visualizations and animations. </p>
+<h2>Explorable Explanations</h2>
+<p>Humans have a deep-rooted passion for playing and exploring, with Friedrich Schiller going as far as to say "Man only plays when in the full meaning of the word he is a man, and he is only completely a man when he plays.". 
+  Many mathematical discoveries (as happened with breakthroughs in physics and engineering) only arose from someone thinking "what happens if I change this bit?". People love to tinker and to fiddle; and to observe the environment's reaction.
+  </p>
+  <p>Fun leads to passion, passion gives persistence and motivation, which in turn is necessary for the hard work needed in order to achieve anything meaningful. 
+</p>
+<p>Another facet of the power of playing is that it helps acquiring familiarity and intuition. Why is that? To understand this we need to think about what playing really is: Children play in order to see how things work. When they
+  knock over a tower of bricks they do not mean to be destructive, they are trying to understand statics and gravity. No parent would try to teach their toddler Newton's laws of motion, because playing is an incredible
+  shortcut to a kind of understanding which may not be exact, but approximately correct and intuitive<dt-fn>By this we mean that a child may not be able to calculate the exact point of impact of a thrown ball, but by some age it can 
+    intuitively predict a roughly correct area in which it will land. </dt-fn>. Later, when the child learns about mechanics in school, its experience has produced a deep-rooted familiarity and the child can more easily <i>internalize</i> the analytical method of predicting. 
+</p>
+<p>While the importance of playing for children and their development has been widely acknowledged, there seems to be a growing body of literature suggesting that adults can benefit a lot from playing, too. 
+  I am no expert in psychology and so we will not get into that. I will just state an unproven proposition: Playing helps people to gain informal and intuitive familiarity with some object or 
+  system which can help them when they are thinking about it in an analytical way. This in turn improves intuition. I think about this feedback system in the following way.
+</p>
+<figure class="l-body">
+    <img src="intuition_knowledge.png"/>
+    <figcaption>Intuition-Knowledge feedback cycle [fix scaling!]</figcaption>
+</figure>
+<p>It could be argued that "traditional" ways of presenting mathematics work by entering this feedback cycle from below (starting with <i>knowledge</i>), by confronting the reader with 
+enormous amounts of facts (definition, definition, definition, lemma, lemma, definition, theorem,...). Only the fittest survive this and emerge -- with an intuition which they formed as a by-product<dt-fn>but 
+which they may not be able to communicate effectively: They were not introduced into the topic by the use of intuition so they have not learned how to communicate their own intuition</dt-fn>. The collection of ideas in this
+section all have in common that they make the reader/student <i>enter the feedback loop from above</i> (i.e. by building some intuition early on). 
+</p>
+
+<h3>Entering the feedback loop from above</h3>
+  <p>Let's talk about the game "A slower speed of light" (By the MIT Game Lab). The game objective is very simple: Pick up 100 orbs by walking around in a slightly Kafkaesque landscape. Every orb you pick up reduces your environment's 
+    speed of light by a small amount (while your own maximum speed is unchanged), until your own speed reaches the speed of light with the 100th orb. By doing that, you can experience step by step relativistic effects: The doppler effect changes the colors of objects,
+   the searchlight effect brightens objects which lie ahead of you and the whole scenery gets warped by length contraction and time dilation.  </p>
+   
+  <figure class="l-body">
+      <img src="assol1.png"/>
+      <figcaption>Gameplay from "A slower speed of light"<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
+</figure>
+   <p>By playing "A slower speed of light" you can get familiarity and almost "real life experience" with something which is classically beyond the reach of our senses. After some time you intuitively know in which direction 
+     the giant mushrooms in the landscape will (seem to) bend when you whizz past them with 90% speed of light. If you decided to calculate length dilation with pencil and paper there is a good chance you would be able to 
+    match the outcome with your newly acquired relativistic intuition and say "Yep, this sounds about right".</p>
+
+    <p>Or take the short browser game "District"<dt-fn>Its author is part of a community making <a href=https://explorabl.es/>"Explorable Explanations" </a></dt-fn>. It shows you how to edit voting districts in order to secure your candidate's victory even if the majority of voters is not voting for him. This teaches 
+      the basics of gerrymandering better (and quicker) than reading an article about it could.</p>
+      <figure class="l-body">
+          <img src="district.png"/>
+          <figcaption>Gameplay from "A slower speed of light"<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
+    </figure>
+ 
+  <!--<p>A second point to this is that no textbook and no article is read by a homogenous body of people but rather by experts and students, by someone just needing a specific definition or proof, or by someone who 
+    is trying to autodidactically learn about a certain subject. No two reader will have identical prerequisites or goals and thus will need different levels of detail and explanation. We have seen this fact when we talked 
+  about expandable proof structure but the gist of it applies to the structure of a whole document as well. </p>-->
+  <p>There is a community of people trying to teach interesting concepts like the one above in the form of "Explorable Explanations", see <a href="https://explorabl.es">this website</a></p>
+  <p>Also, the data visualization community is doing <a href=https://bost.ocks.org/mike/>wonders</a> with interactive data presentation. I strongly believe that there could be a lot more
+    collaboration between scientific researchers and data vis wizards, aimed at creating graphical explanations of very challenging topics (as in Functional Analysis or Quantum Field Theory).
+  </p>
+  <h2>Multidimensional and hierarchical narratives</h2>
+  
+  <p>Cairns, Gown and Collins<dt-cite key="cairns2003dynamically"></dt-cite> very nicely explain how there are essentially two parameters to tune when writing down math: [visualize with animation?] </p>
+  <ul>
+    <li>Amount of details in the proof: Lots of details mean that the main idea of the proof might get obscured by technicalities, too few details means the reader cannot properly understand it.</li>
+    <li>Amount of contextual information<dt-fn>This means material outside the classical "lemma, theorem, proof, corollary" structure, i.e. examples, visualizations, explanations, hints at generalizations and applications etc.
+
+    </dt-fn>. This kind of "bonus material" is essentially irrelevant for the logical argument (and tiresome for an expert in the field just trying to find the main contribution of the text) but is necessary for 
+      a beginner in order to form a better mental representation of the material presented.</li>
+  </ul>
+  <p>Setting those parameters means choosing an audience: There are few textbooks which are read by both undergraduate students and researchers and indeed, as Cairns, Gown and Collins point out: A given mathematical text 
+  may not even be appropriate for a single reader at different times (with the reader progressing in her mathematical abilities, she may want to see less and less technicalities in the proofs and the general exposition in order to more quickly absorb essential information).
+ </p>
+
+  <p>Paper based media necessarily fix these parameters once and for all. The use of "starring" sections (i.e. marking them as advanced material) or relegating technical proofs in the appendix can alleviate the issue, but permanently 
+      skipping large portions of text makes for a tiresome and disorienting read.  </p>
+
+  <p>With modern web technologies, there are at least two possibilities in order to tackle this problem. First, we can apply the idea of hierarchicalization<dt-fn>as discussed for proof structures above</dt-fn>
+        and make whole sections of contextual information appear and disappear on the reader's whim. This might work nicely but there is another problem with conventional media:</p>
+
+  <p>Textbooks and scientific articles are usually written in a linear, contiguous manner. Theorems and their proofs follow lemmata, after that we get examples, concluded by exercises left to the reader.
+     The reader can stray from the path, jump over sections and ignore proofs which she deems to tedious to follow for the moment, but she is still forced to navigate her way through what is essentially 
+     a very long scroll of papyrus. If she needs to re-read a previous paragraph or find a definition, she needs to scroll back until she finds the passage. It is hard to navigate in one dimension because 
+     one has to remember the exact order of the items along it. There is another option, though.
+    </p>
+    
+    
+    <h3>Adding dimensionality</h3>
+
+
+ <p>We talked about people loving to play and explore and so it makes sense to 
+  try and introduce "explorative fun" any time when teaching mathematics (be it lecturing undergrads or writing a research paper).</p>
+  <p>There is a caveat to this: Given too much explorative freedom, anyone will be overwhelmed by the amount of choices <dt-fn>You can't just give a high school student a licence of Matlab and tell him to "do numerics" with it.</dt-fn>. Also, 
+    a teacher (or the author of a textbook) supposedly has a specific learning goal for his audience in mind which he tries to lead the student (or reader) towards to.
+    There is a sweet spot (which may be individually different) between the yoke of a very rigid textbook and unhelpful total freedom. I believe that an instructive teaching medium has struck the balance if it 
+    takes the reader by the hand, gently leads her towards helpful ideas, warns her of common misunderstandings but then takes a step back and waits for her to choose the directions in which she wants to proceed: 
+    More rigor, more exercise, more details or more intuition <dt-fn>Note that those categories are by no means mutually exclusive in the long term, but for someone starting to learn about a specific field they may be at first.</dt-fn>.
+  </p>
+  <p>Instead of just hiding and expanding sections which seem interesting to the reader, it would make for an immersive experience if she could actually "go in different directions", not only figuratively (while still being 
+    constrained to the one-dimensionality of the document), but literally: A classical document (even with dynamically expanding and collapsing sections) is still a continuous scroll 
+    (albeit variable in length).</p>
+    <p>   We imagine her navigating a tree-like structure, with a stem covering the main story with branches diverting to "building intuition", "generalization to metric spaces", "more examples and counterexamples", "applications to physics" etc. 
+    Most readers will find some of those branches, but not all of them, interesting. By presenting the material in this form, the reader does not need to skip a large number of pages, 
+    losing track of what he read and what he leapt over. As humans usually have a decent way of navigating themselves in two dimensions<dt-fn>we do not use three dimensions like birds do</dt-fn>, this seemingly
+    confusing structure might actually lead to an improved orientational sense inside a document<dt-fn>I have often found myself in a situation where I was looking for a specific definition, remark or proof
+      which I had read earlier but couldn't remember where exactly it was located. This is not just unnecessary time loss but also breaks concentration.
+    </dt-fn>. [Definitely need a good sketch of a multidimensional document structure here, even better: A working demonstrator]
+  </p>
+  <p>
+    A second reason for "writing a tree" (instead of a scroll) is that dependencies often form a tree structure, see fig. ???. Sometimes the reader has a specific goal in mind, i.e. a chapter, algorithm or theorem she wants to
+    understand. If the document is written tree-like, she can follow the sequence of branches leading to her goal very easily and more intuitively.
+  </p>
+  <figure>      
+      <img src="dependency.png"/>
+      <figcaption>The chapter dependency structure of <dt-cite key=shewchuk2007conjugate></dt-cite> </figcaption>
+  </figure>
+  <p>
+    Try to recall how many textbooks you have actually read from cover to cover (I suspect that this constitutes a minority). Most readers look for a specific 
+    "substory" of a given textbook (or an article). Let's take a typical linear algebra textbook. Here are a few plausible reader types and their intention for reading it:
+    <ul>
+      <li>Undergraduate student taking a linear algebra course: She needs to be able to solve linear equations by next week because exams are approaching fast.</li>
+      <li>Graduate student: He is currently struggling with functional analysis, has heard that it actually is just "infinite-dimensional linear algebra" and wants to brush up on some basics that he forgot. </li>
+      <li>PhD student working in Computer Vision: She is looking for some techniques for working with rotations, translations and general transformations in 3D in order to accelerate her code.</li>
+      <li>An assistant professor lecturing linear algebra for the first time: He is currently skimming multiple resources in order to find a particularly nice proof for the Jordan normal form.</li>
+      <li>A tenured professor writing her own book about linear algebra: She remembers that a specific notion was exceptionally well-explained in this book and wants to adopt this concept in her own writing.</li>
+    </ul>
+    <p>All those readers superficially need different textbooks because every one of them needs to ignore large portions of the whole text (which is very tiring). It could even be hypothesised that there is such a 
+    large (and growing) number of books on almost any topic <i>because</i> there are typically a lot of different reader types. Few books manage to appeal to all of them and it is exhausting to read a book like this:</p>
+    <figure>      
+        <img src="read_book.png"/>
+        <figcaption>A specific reader might read just small, scattered parts (in red) of a book. [fix scaling!]</figcaption>
+    </figure>
+    <p>A dynamical content textbook where the reader can collapse and expand sections might help bringing those red batches closer together, but a tree-like structure might be more intuitive.</p>
+    <p><figure>      
+        <img src="tree.png" width=10%/>
+        <figcaption>When navigating a "book tree", the reader has a clearer structure of what he is reading and what he is skipping. [fix scaling!]</figcaption>
+    </figure></p>
+  </p>
+
+    <p>It would be interesting to see a scientific article or a textbook which presents its content in such a tree-like manner. </p>
+  
+  
        
-  <h2>Hurdles and challenges</h2>
+  <h2>Hurdles and challenges [needs some work]</h2>
   <p>
     <ul>
       <li>High workload</li>
@@ -475,12 +490,6 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
     </ul>
   </p>
   
-  <h2>Best practices</h2>
-  <p>
-    <ul>
-      <li>Books: MacKay, Dynamics (Geometry of Behavior), A slower speed of light, Michael Nielsen (Neural Networks), Bret Victor</li>
-    </ul>
-  </p>
   
 </dt-article>
 
@@ -550,7 +559,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
   volume={2},
   number={3},
   pages={e5},
-  year={2017}
+  year={2017},
+  url={https://distill.pub/2017/research-debt/}
 }
 
 @book{mackay2003information,
