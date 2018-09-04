@@ -15,7 +15,7 @@
 </script>
 <dt-article>
   <h1>Reducing research debt </h1>
-  <h2>A few ideas on the use of web technology to present <a href="https://distill.pub/2017/research-debt/">distilled research</a> (and become a better teacher in mathematics<dt-fn>This article is written from the perspective of a mathematician, but it should be easily translated into physics, computer science and related fields.</dt-fn>)</h2>
+  <h2>A few ideas on the use of web technology to present <a href="https://distill.pub/2017/research-debt/">distilled research</a> (while becoming a better teacher in mathematics<dt-fn>This article is written from the perspective of a mathematician, but it should be easily translated into physics, computer science and related fields.</dt-fn>)</h2>
   <dt-byline></dt-byline>
   <p>This article should be read as a collection of ideas for reducing research debt in the sense of Chris Olah's and Shan Carter's article <dt-cite key="olah2017research"></dt-cite> (which, in case you have not read, I warmly recommend you do before reading further).</p>
   <h2>The impossible climb</h2>
@@ -27,7 +27,7 @@
   to climbing all mountains in the Austrian Alps (which is no mean feat but possible given sufficient fitness and perseverance), a modern scientist aspiring to be a true polymath faces a challenge similar to that of scaling every elevation higher than 500m on Earth as well as on any known celestial object in the solar system. 
   The large amount of knowledge that humanity has accumulated so far has made it virtually impossible to be an expert in more than one discipline.</p>
   <p> This also affects students aspiring to become researchers themselves: The long climb to the peak of current research becomes longer and more tedious with every new proven result stacked on top of the mountain 
-    of science. Thought through, this means that -- given nothing changes -- there is a natural limit to research at a point where coming to speed with current research takes a whole lifetime. All higher peaks constitute 
+    of science. Thought through, this means that -- given nothing changes -- there is a natural limit to research at a point where coming to speed with current research takes a whole lifetime. All peaks that are higher than that constitute 
     <i>impossible climbs</i> (and impossible scientific breakthroughs).
  </p>
  <p> 
@@ -42,7 +42,7 @@
   A second way is to speed up the learning process <dt-fn>In the spirit of Christopher Olah's article <dt-cite key="olah2017research"></dt-cite> this means constructing elevators to skip the climb.</dt-fn>. 
   In this essay I want to collect and present a few ideas on how to achieve this goal with the aid of new<dt-fn>in the sense of "newer than books"</dt-fn> media. 
   While a lot of these ideas have been present for some time, with the development of newer and more flexible web technologies, they are now more easily implemented than ten years ago. 
-  We will talk about the following topics. [Update!]</p>
+  We will talk about the following topics. </p>
   <ul>
   <li>Polya's four steps as a general guideline for mathematical teaching</li>
   <li>Leslie Lamport's idea of hierarchical proof structures</li>
@@ -66,7 +66,7 @@
       <li><b>Reflect</b> on the result, how it relates to other results and how it might be proved differently.</li>
     </ol>
     <!--<figcaption>Polya's four steps for solving problems</figcaption>-->
-    <p>The authors argue that this method for problem solving can be applied verbatim to learning mathematics; and a teacher of mathematics (or someone writing a textbook or a scientific article) should present her material in a 
+    <p>The authors argue that this method for <i>problem solving</i> can be applied verbatim to <i>learning mathematics</i>; and a teacher of mathematics (or someone writing a textbook or a scientific article) should present her material in a 
         way such that the reader will (maybe unknowingly) follow these four steps. </p>
     <p> Translated into the language of teaching mathematics, these four steps can be reformulated.</p>
     
@@ -75,7 +75,7 @@
     <ol>
         <li><b>Build intuition</b> about the theorem's implication and the necessity of its prerequisites.</li>
         <li><b>Sketch</b> the proof, i.e. give an outline of its most core elements.</li>
-        <li><b>Execute</b> the proof in detail<dt-fn>Steps 2 and 3 may be realized by the hierarchical structure described below</dt-fn></li>
+        <li><b>Execute</b> the proof in detail.<dt-fn>Steps 2 and 3 may be realized by the hierarchical structure described below</dt-fn></li>
         <li><b>Reflect</b> on the theorem's use in subsequent theory or in applications, on its versions in more general settings, or on variants of the proof.</li>
     </ol> 
     
@@ -103,20 +103,26 @@
 
   <p>In his 2012 paper <dt-cite key="lamport2012write"></dt-cite>, Leslie Lamport advocated the introduction of <i>structured proofs</i> in mathematical literature. His basic message was that, while notation 
   has improved a lot (we now write $x^2 = 4$ instead of "what is the number which has the property of equating 4 when multiplied by itself?"), the mathematical community's way of writing down proofs was basically trapped in the 17th century.</p>
-  <p>He proposed to use a <i>hierarchical</i> proof structure: </p>
+  <p>Lamport proposes to use a <i>hierarchical</i> proof structure. He writes, <i>"When  one  reads  a
+    sentence in a prose proof, it is often unclear whether the sentence is asserting
+    a new fact or justifying a previous assertion; and if it asserts a new fact, one
+    has to read further to see if that fact is supposed to be obviously true or is
+    about to be proved."</i></p>
+    <p>He presents a proof from Spivak's Calculus book<dt-cite key="spivak1967calculus"></dt-cite> and argues that many of the steps in this proof are hard to understand for a first-year calculus
+    student.<dt-fn>For a detailed critique, see <dt-cite key="lamport2012write"></dt-cite>.</dt-fn></p>
   <figure class="l-screen-inset">
     <div style="float:left;">
       <img src="proof.png" width="571"/>
-      <figcaption>The original proof from Spivak[Cite!]</figcaption>
+      <figcaption>The original proof from Spivak<dt-cite key="spivak1967calculus"></dt-cite></figcaption>
     </div> 
     <div style="float:left;"> 
       <img src="proof_fixed.png" width="567" >
       <figcaption>Lamport's proposed proof structure</figcaption>
     </div>
   </figure>
-
-  <p>Lamport's expanded version (on the right hand side) clearly marks all the "ins and outs" in every step of the proof. Now some reader may struggle with step 2: The application of the Mean Value Theorem
-    requires a function to be continous but he only sees a differentiable function. This means we need a sub-proof for the fact every differentiable function is continous. At this point we can either refer to a lemma 
+  <p>Lamport proposes to structure any proof by introducing sub-steps which are actually sub-proofs and to iterate this subdivision until each sub-sub-proof is trivial. Figure ??? shows 
+    Lamport's expanded version (on the right hand side). It clearly marks all the "ins and outs" in every step of the proof. Now some reader may struggle with step 2: The application of the Mean Value Theorem
+    requires a function to be continous but he only sees a differentiable function. This means we need a sub-proof for the fact that every differentiable function is continous. At this point we can either refer to a lemma 
     which might have proven this fact before or we can follow Lamport's suggestion to insert a sub-proof.
   </p>
   <figure class="l-body">
@@ -398,7 +404,8 @@ section all have in common that they make the reader/student <i>enter the feedba
   </p>
   <h2>Multidimensional and hierarchical narratives</h2>
   
-  <p>Cairns, Gown and Collins<dt-cite key="cairns2003dynamically"></dt-cite> very nicely explain how there are essentially two parameters to tune when writing down math: [visualize with animation?] </p>
+  <p>Cairns, Gown and Collins<dt-cite key="cairns2003dynamically"></dt-cite> very nicely explain how there are essentially two parameters to tune when writing down math: 
+  </p>
   <ul>
     <li>Amount of details in the proof: Lots of details mean that the main idea of the proof might get obscured by technicalities, too few details means the reader cannot properly understand it.</li>
     <li>Amount of contextual information<dt-fn>This means material outside the classical "lemma, theorem, proof, corollary" structure, i.e. examples, visualizations, explanations, hints at generalizations and applications etc.
@@ -431,7 +438,7 @@ section all have in common that they make the reader/student <i>enter the feedba
   <p>There is a caveat to this: Given too much explorative freedom, anyone will be overwhelmed by the amount of choices 
     <dt-fn>You can't just give a high school student a licence of Matlab and tell him to "do numerics" with it.</dt-fn>. Also, a teacher (or the author of a textbook) supposedly has a specific learning goal for his audience in mind which he tries to lead the student (or reader) towards to.
     There is a growing body of literature <dt-cite key="kirschner2006unguided"></dt-cite> suggesting that novice students
-    do not learn effectively when given too much freedom: Students with small prior knowledge profit most from guided instructional approaches with "worked examples", "process worksheets" and 
+    do not learn effectively when given too much freedom: Students with small prior knowledge profit most from guided instructional approaches with "worked examples"<dt-cite key="sweller1985use"></dt-cite>, "process worksheets" and 
     a presentation of the basic laws and ideas needed. Only later, once the student has acquired enough experience, will they profit more from "unguided instructions" like problem assignments (this is called 
     the expertise reversal effect, see <dt-cite key="sweller2003expertise"></dt-cite>).<dt-fn>Cf. also the "worked example effect" <dt-cite key = "sweller1985use"></dt-cite>.</dt-fn></p>
     <p>
@@ -442,7 +449,7 @@ section all have in common that they make the reader/student <i>enter the feedba
   <p>Instead of just hiding and expanding sections which seem interesting to the reader, it would make for an immersive experience if she could actually "go in different directions", not only figuratively (while still being 
     constrained to the one-dimensionality of the document), but literally: A classical document (even with dynamically expanding and collapsing sections) is still a continuous scroll 
     (albeit variable in length).</p>
-    <p>   We imagine her navigating a tree-like structure, with a stem covering the main story with branches diverting to "building intuition", "generalization to metric spaces", "more examples and counterexamples", "applications to physics" etc. 
+    <p>   We can imagine her navigating a tree-like structure, with a stem covering the main story with branches diverting to "building intuition", "generalization to metric spaces", "more examples and counterexamples", "applications to physics" etc. 
     Most readers will find some of those branches, but not all of them, interesting. By presenting the material in this form, the reader does not need to skip a large number of pages, 
     losing track of what he read and what he leapt over. As humans usually have a decent way of navigating themselves in two dimensions<dt-fn>we do not use three dimensions like birds do</dt-fn>, this seemingly
     confusing structure might actually lead to an improved orientational sense inside a document<dt-fn>I have often found myself in a situation where I was looking for a specific definition, remark or proof
@@ -482,16 +489,17 @@ section all have in common that they make the reader/student <i>enter the feedba
 
     <p>It would be interesting to see a scientific article or a textbook which presents its content in such a tree-like manner. </p>
   
-  
+  <p>We conclude this article with a short discussion of challenges to the ideas presented. If you have questions or comments, please drop me a line at phkwacker[at]gmail[dot]com.</p>
        
-  <h2>Hurdles and challenges [needs some work]</h2>
+  <h2>Hurdles and challenges</h2>
   <p>
     <ul>
-      <li>High workload</li>
-      <li>Can't be outsourced outside of research community</li>
-      <li>Paper is mostly too inflexible: Hard to publish and make permanent (internet technology gets outdated)!</li>
-      <li>Technology gets outdated and looks old after some time. But: Books also get less easy to read, see for example Henry</li>
-      <li>Hierarchical structure is not adapted universally well <dt-cite key="cairns2003theoretical"></dt-cite>
+      <li>High workload: Most of the methods presented take up much more time than writing a plain traditional (research) article. </li>
+      <li>No incentives: There is no real motivator for researchers to take a portion out of their "research time" in order to make their articles more readable (as discussed in <dt-cite key="olah2017research"></dt-cite>). </li>
+      <li>Can't be outsourced: The deep insights of a researcher will most likely be needed in order to improve an article's (or book's) readability in the sense of this article.</li>
+      <li>Paper is inflexible: Dynamical hierarchies and animations are hard to publish and make permanent (internet technology gets outdated, servers are shut off etc.)!</li>
+      <li>Web technology gets outdated and looks "old" after some time. This is only a minor point as books also get almost unreadable after some time.<dt-fn>As knows anyone who has tried to read a textbook written in the era of the typewriter.</dt-fn></li>
+      <li>Hierarchical proof structure is not adapted universally well <dt-cite key="cairns2003theoretical"></dt-cite>.
     </ul>
   </p>
   
@@ -633,5 +641,22 @@ section all have in common that they make the reader/student <i>enter the feedba
     pages={59--89},
     year={1985},
     publisher={Taylor \& Francis}
+  }
+
+  @article{sweller1985use,
+    title={The use of worked examples as a substitute for problem solving in learning algebra},
+    author={Sweller, John and Cooper, Graham A},
+    journal={Cognition and instruction},
+    volume={2},
+    number={1},
+    pages={59--89},
+    year={1985},
+    publisher={Taylor \& Francis}
+  }
+  @book{spivak1967calculus,
+    title={Calculus},
+    author={Spivak, Michael},
+    year={1967},
+    publisher={London: Addison-Wesley Benjamin, Inc}
   }
 </script>
