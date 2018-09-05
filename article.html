@@ -2,6 +2,8 @@
 <meta charset="utf-8">
 <script src="https://distill.pub/template.v1.js"></script>
 
+
+
 <script type="text/front-matter">
   title: "Article Title"
   description: "Article description"
@@ -15,7 +17,8 @@
 </script>
 <dt-article>
   <h1>Reducing research debt </h1>
-  <h2>A few ideas on the use of web technology to present <a href="https://distill.pub/2017/research-debt/">distilled research</a> (while becoming a better teacher in mathematics<dt-fn>This article is written from the perspective of a mathematician, but it should be easily translated into physics, computer science and related fields.</dt-fn>)</h2>
+  <h2>A few ideas on the use of web technology to present <a href="https://distill.pub/2017/research-debt/">distilled research</a> (while becoming a better teacher in mathematics
+  <dt-fn>With "teacher" meaning here someone who teaches mathematics, i.e. someone writing a paper or a textbook or someone explaining a mathematical issue on a blackboard etc. This article is written from the perspective of a mathematician, but it should be easily translated into physics, computer science and related fields.</dt-fn>)</h2>
   <dt-byline></dt-byline>
   <p>This article should be read as a collection of ideas for reducing research debt in the sense of Chris Olah's and Shan Carter's article <dt-cite key="olah2017research"></dt-cite> (which, in case you have not read, I warmly recommend you do before reading further).</p>
   <h2>The impossible climb</h2>
@@ -47,7 +50,7 @@
   <li>Polya's four steps as a general guideline for mathematical teaching</li>
   <li>Leslie Lamport's idea of hierarchical proof structures</li>
   <li>Visualization, animation, and "Explorables"</li>
-  <li>Hierarchical and multidimensional narratives</li>
+  <li>Hierarchical and nonlinear narratives</li>
   </ul>
   
   
@@ -120,15 +123,14 @@
       <figcaption>Lamport's proposed proof structure</figcaption>
     </div>
   </figure>
-  <p>Lamport proposes to structure any proof by introducing sub-steps which are actually sub-proofs and to iterate this subdivision until each sub-sub-proof is trivial. Figure ??? shows 
+  <p>Lamport proposes to structure any proof by introducing sub-steps which are actually sub-proofs and to iterate this subdivision until each sub-sub-proof is trivial. The figure above shows 
     Lamport's expanded version (on the right hand side). It clearly marks all the "ins and outs" in every step of the proof. Now some reader may struggle with step 2: The application of the Mean Value Theorem
     requires a function to be continous but he only sees a differentiable function. This means we need a sub-proof for the fact that every differentiable function is continous. At this point we can either refer to a lemma 
-    which might have proven this fact before or we can follow Lamport's suggestion to insert a sub-proof.
+    which might have proven this fact before or we can follow Lamport's suggestion to insert a sub-proof:
   </p>
-  <figure class="l-body">
-        <img src="proof_substep.png" width="514"/>
-        <figcaption>Subproof of step 2, from Lamport<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
-  </figure>
+  <p class="l-body">
+        <img src="proof_substep.png" />
+  </p>
   <!--<p>He compares this way of writing down a proof to that of explaining something to a very curious child who always asks, "but why?". </p>-->
   <p>A hierarchical proof can be implemented in at least three ways. 
     <ul>
@@ -136,7 +138,8 @@
         unnecessary information for advanced readers (although it is visually possible to skip steps by skipping indentations). This is the method used by Lamport in <dt-cite key="lamport2012write"></dt-cite> although he
         states that using hypertext (see next bullet point) is even better. 
       </li>
-      <li>Hierarchical structure by hypertext pop-ups: Subproofs can be shown by clicking on a proof step. This is the method demonstrated by Moyen <dt-cite key="moyen2016Hypertext"></dt-cite> (see fig. ???) and can be used 
+      <li>Hierarchical structure by hypertext pop-ups: Subproofs can be shown by clicking on a proof step. This is the method demonstrated by Moyen 
+        <dt-cite key="moyen2016Hypertext"></dt-cite> in the figure below and can be used 
       in pdf files.</li>
       <li>Hierarchical structure by expanding and collapsing text: Clicking on a proof steps pushes down the rest of the text, allocating space for presenting a lower-level subproof. 
         This is actually the method preferred by both Lamport and Moyen, but can at this point not be realized in pdf files. This is because blank space would need to be allocated in advance, 
@@ -150,10 +153,10 @@
     </ul>
   
   </p>
-  <figure class="l-body">
-      <img src="proof_moyen.png" width="514"/>
-      <figcaption>Hierarchical structure by hypertext pop-ups, from Moyen<dt-cite key="moyen2016Hypertext"></dt-cite> [fix scaling!]</figcaption>
-</figure>
+  <p class="l-body">
+      <img src="proof_moyen.png" width=100%/>
+    
+  </p>
 
 <script>
 
@@ -318,18 +321,17 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
      <p> Even if there is no actual geometric picture for a specific mathematical concept, there is often a "particularly good" visual way of thinking about it. In many cases, this "good way" is both most 
      easily expressed and stored in memory when presented visually. This visual representation may or may not be present in the mathematical community but in some cases is not effectively 
      taught in courses and not explained in most textbooks.</p>
-     <p> One example for this is conditional entropy and mutual information (from information theory). Most textbooks (and Wikipedia) provide with its definition a visual aide in the form of a Venn diagram (see fig. ???). But there
-       is another way by using a specific bar plot (see fig. ???).  <dt-cite key=mackay2003information>MacKay (Exercise 8.8)</dt-cite> argues that the former version is very misleading and the latter picture is much more accurate.
+     <p> One example for this is conditional entropy and mutual information (from information theory). Most textbooks (and Wikipedia) provide with its definition a visual aide in the form of a Venn diagram (see below). But there
+       is another way by using a specific bar plot.  <dt-cite key=mackay2003information>MacKay (Exercise 8.8)</dt-cite> argues that the former version is very misleading and the latter picture is much more accurate.
       Chris Olah's <dt-cite key=olahvisual>Visual Information Theory</dt-cite> also uses bar plots but most textbooks use the Venn diagram (for example <dt-cite key=cover2012elements></dt-cite>) or no visualization at all (for example <dt-cite key=applebaum1996probability></dt-cite>)!  </p>
+      <p>For reference, these are the Venn diagram and the bar plot visualization as depicted in <dt-cite key=mackay2003information></dt-cite></p>
        
-      <figure>      
-          <img src="figure69.png"/>
-          <figcaption>An explanation of conditional entropy and mutual information using Venn diagrams, as depicted in <dt-cite key=mackay2003information></dt-cite>.</figcaption>
-      </figure>
-      <figure>      
-          <img src="figure68.png"/>
-          <figcaption>An explanation of conditional entropy and mutual information using a bar plot, as depicted in <dt-cite key=mackay2003information></dt-cite>.</figcaption>
-      </figure>
+        <p>
+          <img src="figure69.png" >
+          <img src="figure68.png"/></p>
+      
+      <p>      
+      </p>
 
        
      <!--<p>[Further examples: 1-forms as surfaces that are pierced. Good example: MTW, bad example: most texts about differential forms] [The geometry of behaviour: Book only with visualizations] 
@@ -340,12 +342,11 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
       <p>In some cases, the mathematical objects under study actually are dynamical objects. In this case it is almost negligent to not show animations of this dynamics, albeit it is inevitable 
         for textbooks and articles presented on paper. There are a few examples pushing the limit of what can be sketched on paper, most notably the wonderful four-part cartoon series <dt-cite key=abraham1983dynamics>Dynamics -- The Geometry of Behavior</dt-cite>, explaining
         concepts from dynamical systems theory like periodicity, chaos and bifurcation in an exceptionally revealing and simultaneously mathematically rigoros way. This is even more impressing given the fact that the book 
-        was written before any truly useful visualization software existed and thus solely relied on sketching by hand. 
+        was written before any truly useful visualization software existed and thus solely relied on sketching by hand. Its cover shows one of those marvelous sketches depicting bifurcation behavior of a stirring machine.
       </p>
-      <figure>      
+      <p>      
           <img src="abrahamshaw.jpg"/>
-          <figcaption>The cover of <dt-cite key=abraham1983dynamics></dt-cite>, showing bifurcation behavior of a stirring machine..</figcaption>
-      </figure>
+      </p>
       <p>As a remarkable example of what can be achieved by switching from traditional paper to dynamical websites as a medium for presenting mathematics, we consider Michael Nielsen's online book 
         <i>Neural networks and deep learning</i><dt-cite key=nielsen2015neural></dt-cite>. It teaches the basics of neural networks, i.e. what neurons are, how backpropagation allows neural networks to learn,
        it gives a visual proof on why neural networks are universal emulators and how "deep" neural networks work. Interspersed throughout the text (which does not shy away from proofs which might lead to a better understanding)
@@ -365,10 +366,9 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-
   I am no expert in psychology and so we will not get into that. I will just state an unproven proposition: Playing helps people to gain informal and intuitive familiarity with some object or 
   system which can help them when they are thinking about it in an analytical way. This in turn improves intuition. I think about this feedback system in the following way.
 </p>
-<figure class="l-body">
-    <img src="intuition_knowledge.png"/>
-    <figcaption>Intuition-Knowledge feedback cycle [fix scaling!]</figcaption>
-</figure>
+<p class="l-body">
+    <img src="intuition_knowledge.png" />
+</p>
 <p>It could be argued that "traditional" ways of presenting mathematics work by entering this feedback cycle from below (starting with <i>knowledge</i>), by confronting the reader with 
 enormous amounts of facts (definition, definition, definition, lemma, lemma, definition, theorem,...). Only the fittest survive this and emerge -- with an intuition which they formed as a by-product<dt-fn>but 
 which they may not be able to communicate effectively: They were not introduced into the topic by the use of intuition so they have not learned how to communicate their own intuition</dt-fn>. The collection of ideas in this
@@ -380,20 +380,18 @@ section all have in common that they make the reader/student <i>enter the feedba
     speed of light by a small amount (while your own maximum speed is unchanged), until your own speed reaches the speed of light with the 100th orb. By doing that, you can experience step by step relativistic effects: The doppler effect changes the colors of objects,
    the searchlight effect brightens objects which lie ahead of you and the whole scenery gets warped by length contraction and time dilation.  </p>
    
-  <figure class="l-body">
+  <p class="l-body">
       <img src="assol1.png"/>
-      <figcaption>Gameplay from "A slower speed of light"<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
-</figure>
+      </p>
    <p>By playing "A slower speed of light" you can get familiarity and almost "real life experience" with something which is classically beyond the reach of our senses. After some time you intuitively know in which direction 
      the giant mushrooms in the landscape will (seem to) bend when you whizz past them with 90% speed of light. If you decided to calculate length dilation with pencil and paper there is a good chance you would be able to 
     match the outcome with your newly acquired relativistic intuition and say "Yep, this sounds about right".</p>
 
     <p>Or take the short browser game "District"<dt-fn>Its author is part of a community making <a href=https://explorabl.es/>"Explorable Explanations" </a></dt-fn>. It shows you how to edit voting districts in order to secure your candidate's victory even if the majority of voters is not voting for him. This teaches 
       the basics of gerrymandering better (and quicker) than reading an article about it could.</p>
-      <figure class="l-body">
-          <img src="district.png"/>
-          <figcaption>Gameplay from "A slower speed of light"<dt-cite key="lamport2012write"></dt-cite> [fix scaling!]</figcaption>
-    </figure>
+      <p class="l-body">
+          <img src="district.png" width = 75%/>
+      </p>
  
   <!--<p>A second point to this is that no textbook and no article is read by a homogenous body of people but rather by experts and students, by someone just needing a specific definition or proof, or by someone who 
     is trying to autodidactically learn about a certain subject. No two reader will have identical prerequisites or goals and thus will need different levels of detail and explanation. We have seen this fact when we talked 
@@ -402,7 +400,7 @@ section all have in common that they make the reader/student <i>enter the feedba
   <p>Also, the data visualization community is doing <a href=https://bost.ocks.org/mike/>wonders</a> with interactive data presentation. I strongly believe that there could be a lot more
     collaboration between scientific researchers and data vis wizards, aimed at creating graphical explanations of very challenging topics (as in Functional Analysis or Quantum Field Theory).
   </p>
-  <h2>Multidimensional and hierarchical narratives</h2>
+  <h2>Nonlinear and hierarchical narratives</h2>
   
   <p>Cairns, Gown and Collins<dt-cite key="cairns2003dynamically"></dt-cite> very nicely explain how there are essentially two parameters to tune when writing down math: 
   </p>
@@ -460,10 +458,10 @@ section all have in common that they make the reader/student <i>enter the feedba
     A second reason for "writing a tree" (instead of a scroll) is that dependencies often form a tree structure, see fig. ???. Sometimes the reader has a specific goal in mind, i.e. a chapter, algorithm or theorem she wants to
     understand. If the document is written tree-like, she can follow the sequence of branches leading to her goal very easily and more intuitively.
   </p>
-  <figure>      
-      <img src="dependency.png"/>
-      <figcaption>The chapter dependency structure of <dt-cite key=shewchuk2007conjugate></dt-cite> </figcaption>
-  </figure>
+  <p>      
+      <img src="dependency.png" width=100%/>
+      <p>The chapter dependency structure of <dt-cite key=shewchuk2007conjugate></dt-cite> </p>
+  </p>
   <p>
     Try to recall how many textbooks you have actually read from cover to cover (I suspect that this constitutes a minority). Most readers look for a specific 
     "substory" of a given textbook (or an article). Let's take a typical linear algebra textbook. Here are a few plausible reader types and their intention for reading it:
@@ -476,15 +474,15 @@ section all have in common that they make the reader/student <i>enter the feedba
     </ul>
     <p>All those readers superficially need different textbooks because every one of them needs to ignore large portions of the whole text (which is very tiring). It could even be hypothesised that there is such a 
     large (and growing) number of books on almost any topic <i>because</i> there are typically a lot of different reader types. Few books manage to appeal to all of them and it is exhausting to read a book like this:</p>
-    <figure>      
-        <img src="read_book.png"/>
-        <figcaption>A specific reader might read just small, scattered parts (in red) of a book. [fix scaling!]</figcaption>
-    </figure>
+         <p>
+        <img src="read_book.png"/></p>
+        <p>A specific reader might read just small, scattered parts (in red) of a book. [fix scaling!]</p>
+    
     <p>A dynamical content textbook where the reader can collapse and expand sections might help bringing those red batches closer together, but a tree-like structure might be more intuitive.</p>
-    <p><figure>      
-        <img src="tree.png" width=10%/>
-        <figcaption>When navigating a "book tree", the reader has a clearer structure of what he is reading and what he is skipping. [fix scaling!]</figcaption>
-    </figure></p>
+    <p>     
+        <img src="tree.png" width=50%/>
+        <p>When navigating a "book tree", the reader has a clearer structure of what he is reading and what he is skipping. </p>
+    </p>
   </p>
 
     <p>It would be interesting to see a scientific article or a textbook which presents its content in such a tree-like manner. </p>
